@@ -13,7 +13,7 @@ import { MenuContext } from "../../context/MenuContext";
 
 const Header: Component = () => {
   const [language, setLanguage] = useContext(LanguageContext);
-  const [isOpen, setIsOpen] = createSignal(true);
+  const [isOpen, setIsOpen] = createSignal(false);
 
   const t = () => HeaderTranslation[language() as LanguageCode];
 
