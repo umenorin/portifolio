@@ -63,6 +63,7 @@ const MenuModal: Component<MenuModalProps> = (props) => {
             class="menu-modal__router-link"
             activeClass="active"
             inactiveClass="default"
+            onclick={CloseMenu}
             end
           >
             {t().home}
@@ -72,6 +73,7 @@ const MenuModal: Component<MenuModalProps> = (props) => {
             class="menu-modal__router-link"
             activeClass="active"
             inactiveClass="default"
+            onclick={CloseMenu}
             end
           >
             {t().about}
@@ -81,6 +83,7 @@ const MenuModal: Component<MenuModalProps> = (props) => {
             class="menu-modal__router-link"
             activeClass="active"
             inactiveClass="default"
+            onclick={CloseMenu}
             end
           >
             {t().projects}
