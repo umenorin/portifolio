@@ -1,0 +1,67 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #1e2940;
+    margin: 2rem auto;
+    width: 85vw;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  &__logo-link {
+    &:link,
+    &:visited,
+    &:active {
+      font-size: 2rem;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+  &__routers {
+    color: white;
+    font-size: 2rem;
+
+    display: flex;
+    gap: 2rem;
+    font-weight: 600;
+  }
+
+  &__router-link {
+    animation: 0.5s ease-out;
+
+    &:link,
+    &:visited {
+      font-size: 2rem;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: transparent;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+
+  &__language {
+    &-container {
+      max-width: 5rem;
+
+      max-height: 3.5rem;
+
+      object-fit: fill;
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
