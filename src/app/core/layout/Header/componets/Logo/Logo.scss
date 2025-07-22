@@ -1,0 +1,10 @@
+.logo-link {
+  &:link,
+  &:visited,
+  &:active {
+    font-size: var(--size-medium);
+    color: var(--light-color-text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}

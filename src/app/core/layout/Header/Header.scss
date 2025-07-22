@@ -1,3 +1,8 @@
+:root {
+  --size-medium: 2rem;
+  --light-color-text: #fff;
+}
+
 .header {
   &__container {
     display: flex;
@@ -10,24 +15,13 @@
     border-radius: 1rem;
   }
 
-  &__logo-link {
-    &:link,
-    &:visited,
-    &:active {
-      font-size: 2rem;
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-    }
-  }
-
   &__routers {
-    color: white;
-    font-size: 2rem;
-
     display: flex;
-    gap: 2rem;
-    font-weight: 600;
+    gap: var(--size-medium);
+
+    @media only screen and (max-width: 700px) {
+      display: none;
+    }
   }
 
   &__router-link {
@@ -35,8 +29,8 @@
 
     &:link,
     &:visited {
-      font-size: 2rem;
-      color: #fff;
+      font-size: var(--size-medium);
+      color: var(--light-color-text);
       font-weight: 700;
       text-decoration: transparent;
     }
@@ -53,15 +47,25 @@
   &__language {
     &-container {
       max-width: 5rem;
-
       max-height: 3.5rem;
-
       object-fit: fill;
+
+      @media only screen and (max-width: 700px) {
+        display: none;
+      }
     }
 
     &-image {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  &__button {
+    display: none;
+    @media only screen and (max-width: 700px) {
+      display: inline-block;
+      cursor: pointer;
     }
   }
 }

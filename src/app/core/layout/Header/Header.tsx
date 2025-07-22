@@ -1,4 +1,4 @@
-import { useContext, type Component } from "solid-js";
+import { createSignal, useContext, type Component } from "solid-js";
 
 import "./Header.scss";
 import { A } from "@solidjs/router";
@@ -7,14 +7,15 @@ import brazil from "../../../../assets/images/flags/brazil_42x39.webp";
 import usa from "../../../../assets/images/flags/usa_74x39.webp";
 import { LanguageCode, LanguageContext } from "../../context/LanguageContext";
 import HeaderTranslation from "./HeaderTranslations";
+import Logo from "./componets/Logo/Logo";
+import MenuModal from "./componets/MenuModal/MenuModal";
+import { MenuContext } from "../../context/MenuContext";
 
 const Header: Component = () => {
   const [language, setLanguage] = useContext(LanguageContext);
-
-    console.log(language())
+  const [isOpen, setIsOpen] = createSignal(true);
 
   const t = () => HeaderTranslation[language() as LanguageCode];
-  console.log(t);
 
   const switchLanguage = () => {
     if (language() == "pt_br") {
@@ -28,12 +29,15 @@ const Header: Component = () => {
     console.log(language());
   };
 
+  const toggleMenuStatus = () => {
+    setIsOpen(!isOpen());
+    console.log(isOpen());
+  };
+
   return (
     <div class="header__container">
       <div class="header__logo">
-        <a href="/" class="header__logo-link">
-          Ruan.dev
-        </a>
+        <Logo />
       </div>
       <div class="header__routers">
         <A
@@ -72,7 +76,21 @@ const Header: Component = () => {
           alt={language() == "pt_br" ? "portugues" : "english"}
         />
       </div>
-      
+
+      <div class="header__button" onclick={toggleMenuStatus}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="30px"
+          viewBox="0 -960 960 960"
+          width="30px"
+          fill="#FFFFFF"
+        >
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </div>
+      <MenuContext.Provider value={[isOpen, setIsOpen]}>
+        <MenuModal openModal={isOpen()} />
+      </MenuContext.Provider>
     </div>
   );
 };
