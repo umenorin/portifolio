@@ -5,7 +5,7 @@ import "./Footer.scss";
 const Footer: Component = () => {
   return (
     <>
-      <p> My Footer</p>
+      <p class="footer__text">2025 © Made with love by Ruan</p>
     </>
   );
 };
