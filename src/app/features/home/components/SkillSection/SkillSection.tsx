@@ -18,7 +18,10 @@ import react from "../../../../../assets/images/skill_section/React.webp";
 import sass from "../../../../../assets/images/skill_section/sass.webp";
 import solid from "../../../../../assets/images/skill_section/solid.webp";
 import ts from "../../../../../assets/images/skill_section/TS.webp";
-import { LanguageCode, LanguageContext } from "../../../../core/context/LanguageContext";
+import {
+  LanguageCode,
+  LanguageContext,
+} from "../../../../core/context/LanguageContext";
 import HomePageTranslation from "../../HomePageTranslations";
 
 const firstHalfSkills = [
@@ -47,10 +50,12 @@ const SkillSection: Component = () => {
 
   return (
     <Section>
-      <h2 class="skill-section__title">{t().sectionSkillsTitle}</h2>
-      <div class="skill-section__carousel">
-        <Carousel skills={firstHalfSkills} reverseRoll={false} />
-        <Carousel skills={secondHalfSkills} reverseRoll={true} />
+      <div class="skill-section__container">
+        <h2 class="skill-section__title">{t().sectionSkillsTitle}</h2>
+        <div class="skill-section__carousel">
+          <Carousel skills={firstHalfSkills} reverseRoll={false} />
+          <Carousel skills={secondHalfSkills} reverseRoll={true} />
+        </div>
       </div>
     </Section>
   );

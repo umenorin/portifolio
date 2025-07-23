@@ -31,17 +31,16 @@ $animationSpeed: 10s;
   &__container {
     background: white;
 
-    height: 100px;
     margin: auto;
     overflow: hidden;
     position: relative;
-    width: 70rem;
+    width: 80rem;
 
     &::before,
     &::after {
       @include white-gradient;
       content: "";
-      height: 100px;
+      height: 125px;
       position: absolute;
       width: 100px;
       z-index: 2;
@@ -78,6 +77,6 @@ $animationSpeed: 10s;
 
   &__skill-icon {
     object-fit: contain;
-    width: 100%;
+    width: 125px;
   }
 }

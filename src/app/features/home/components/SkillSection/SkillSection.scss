@@ -1,7 +1,23 @@
 .skill-section {
+  &__container {
+    max-width: 94.6rem;
+  }
+
   &__title {
     font-size: 4rem;
     font-weight: 600;
+    width: 60vw;
+    margin: 0 auto 4rem;
+
+    @media only screen and (max-width: 1180px) {
+      margin: 0 0 4rem 0;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      font-size: 3.5rem;
+      width: 60vw;
+      margin: 0 auto 4rem ;
+    }
   }
 
   &__carousel {

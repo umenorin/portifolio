@@ -1,7 +1,7 @@
 .info-section {
   &__container {
     display: flex;
-    justify-content: space-evenly;
+    gap: 5rem;
 
     @media only screen and (max-width: 1180px) {
       flex-direction: column;
