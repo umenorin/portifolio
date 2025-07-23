@@ -1,11 +1,12 @@
 import type { Component } from "solid-js";
 
-import "./AboutMe.scss";
+import "./AboutMePage.scss";
+import AboutMeSection from "../components/AboutMeSection/AboutMeSection";
 
 const AboutMePage: Component = () => {
   return (
     <>
-      <p class="text">About Me Page is working</p>
+      <AboutMeSection />
     </>
   );
 };
