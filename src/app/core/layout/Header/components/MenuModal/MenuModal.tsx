@@ -46,7 +46,7 @@ const MenuModal: Component<MenuModalProps> = (props) => {
   }
 
   return (
-    <>
+    <div class="menu-modal">
       <div
         class={`menu-modal__background  ${isOpen() ? "menu-modal__background--open" : ""}`}
         onclick={CloseMenu}
@@ -100,7 +100,7 @@ const MenuModal: Component<MenuModalProps> = (props) => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

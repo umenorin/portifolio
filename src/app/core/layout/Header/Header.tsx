@@ -35,63 +35,69 @@ const Header: Component = () => {
   };
 
   return (
-    <div class="header__container">
-      <div class="header__logo">
-        <Logo />
-      </div>
-      <div class="header__routers">
-        <A
-          href="/"
-          class="header__router-link"
-          activeClass="active"
-          inactiveClass="default"
-          end
-        >
-          {t().home}
-        </A>
-        <A
-          href="/about"
-          class="header__router-link"
-          activeClass="active"
-          inactiveClass="default"
-          end
-        >
-          {t().about}
-        </A>
-        <A
-          href="/projects"
-          class="header__router-link"
-          activeClass="active"
-          inactiveClass="default"
-          end
-        >
-          {t().projects}
-        </A>
+    <>
+      <div class="header__container">
+        <div class="header__logo">
+          <Logo />
+        </div>
+
+        <div class="header__routers">
+          <A
+            href="/"
+            class="header__router-link"
+            activeClass="active"
+            inactiveClass="default"
+            end
+          >
+            {t().home}
+          </A>
+
+          <A
+            href="/about"
+            class="header__router-link"
+            activeClass="active"
+            inactiveClass="default"
+            end
+          >
+            {t().about}
+          </A>
+
+          <A
+            href="/projects"
+            class="header__router-link"
+            activeClass="active"
+            inactiveClass="default"
+            end
+          >
+            {t().projects}
+          </A>
+        </div>
+
+        <div onclick={switchLanguage} class="header__language-container">
+          <img
+            class="header__language-image"
+            src={language() == "pt_br" ? brazil : usa}
+            alt={language() == "pt_br" ? "portugues" : "english"}
+          />
+        </div>
+
+        <div class="header__button" onclick={toggleMenuStatus}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="30px"
+            viewBox="0 -960 960 960"
+            width="30px"
+            fill="#FFFFFF"
+          >
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+          </svg>
+        </div>
       </div>
 
-      <div onclick={switchLanguage} class="header__language-container">
-        <img
-          class="header__language-image"
-          src={language() == "pt_br" ? brazil : usa}
-          alt={language() == "pt_br" ? "portugues" : "english"}
-        />
-      </div>
-
-      <div class="header__button" onclick={toggleMenuStatus}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="30px"
-          viewBox="0 -960 960 960"
-          width="30px"
-          fill="#FFFFFF"
-        >
-          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-        </svg>
-      </div>
       <MenuContext.Provider value={[isOpen, setIsOpen]}>
         <MenuModal openModal={isOpen()} />
       </MenuContext.Provider>
-    </div>
+    </>
   );
 };
 
