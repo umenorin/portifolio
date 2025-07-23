@@ -1,8 +1,8 @@
 .menu-modal {
-  z-index: 2;
+  position: fixed;
   &__background {
-    display: none;
-
+    width: 0;
+    z-index: 1;
     &--open {
       display: block;
       position: fixed;
@@ -15,24 +15,29 @@
   }
 
   &__container {
-    display: none;
-    animation-duration: 0.5s;
-    animation-name: slide-in;
+    z-index: 2;
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    right: -5rem;
+    top: 0;
+    background-color: #2d9bb4;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
 
     &--open {
-      position: fixed;
       right: 0;
-      top: 0;
-      height: 100vh;
+      animation: slide-in 0.5s forwards;
       width: 50vw;
 
-      display: flex;
-      flex-direction: column;
+      @media only screen and (max-width: 520px) {
+        width: 70vw;
+      }
+    }
 
-      background-color: #2d9bb4;
-      padding: 2rem;
-      border-top-left-radius: 1rem;
-
+    &--close {
+      animation: slide-out 0.5s forwards;
     }
   }
 
@@ -91,12 +96,24 @@
 
 @keyframes slide-in {
   from {
-    translate: 150vw 0;
+    transform: translateX(100%);
     scale: 200% 1;
   }
 
   to {
-    translate: 0 0;
+    transform: translateX(0);
     scale: 100% 1;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+    scale: 100% 1;
+  }
+
+  to {
+    transform: translateX(100%);
+    scale: 200% 1;
   }
 }

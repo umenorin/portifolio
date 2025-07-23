@@ -1,4 +1,4 @@
-import { useContext, type Component } from "solid-js";
+import { createSignal, useContext, type Component } from "solid-js";
 
 import "./MenuModal.scss";
 import { A } from "@solidjs/router";
@@ -20,6 +20,7 @@ interface MenuModalProps {
 const MenuModal: Component<MenuModalProps> = (props) => {
   const [language, setLanguage] = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useContext(MenuContext);
+  const [isClosing, setIsClosing] = createSignal(false);
 
   const t = () => HeaderTranslation[language() as LanguageCode];
 
@@ -36,7 +37,11 @@ const MenuModal: Component<MenuModalProps> = (props) => {
   };
 
   function CloseMenu() {
-    setIsOpen(!isOpen());
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, 500); // igual ao duration da animação
   }
 
   if (props.openModal) {
@@ -52,7 +57,7 @@ const MenuModal: Component<MenuModalProps> = (props) => {
         onclick={CloseMenu}
       ></div>
       <div
-        class={`menu-modal__container  ${isOpen() ? "menu-modal__container--open" : ""}`}
+        class={`menu-modal__container ${isOpen() ? "menu-modal__container--open" : ""} ${isClosing() ? "menu-modal__container--close" : ""}`}
       >
         <div class="menu-modal__logo">
           <Logo />
