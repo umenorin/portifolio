@@ -1,0 +1,12 @@
+.skill-section {
+  &__title {
+    font-size: 4rem;
+    font-weight: 600;
+  }
+
+  &__carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

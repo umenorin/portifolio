@@ -1,0 +1,83 @@
+@mixin white-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+$animationSpeed: 10s;
+
+// Animation
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.carousel {
+  &__container {
+    background: white;
+
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 70rem;
+
+    &::before,
+    &::after {
+      @include white-gradient;
+      content: "";
+      height: 100px;
+      position: absolute;
+      width: 100px;
+      z-index: 2;
+    }
+
+    &::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+    }
+
+    &::before {
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__skills {
+    display: flex;
+    align-items: center;
+    width: max-content;
+
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
+
+    animation: scroll $animationSpeed linear infinite;
+
+    &--right {
+      animation: scrollReverse $animationSpeed linear infinite;
+    }
+  }
+
+  &__skill-icon {
+    object-fit: contain;
+    width: 100%;
+  }
+}
