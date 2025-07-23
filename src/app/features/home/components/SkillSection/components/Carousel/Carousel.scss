@@ -34,7 +34,8 @@ $animationSpeed: 10s;
     margin: auto;
     overflow: hidden;
     position: relative;
-    width: 80rem;
+    max-width: 80rem;
+    width: 100%;
 
     &::before,
     &::after {
@@ -63,7 +64,6 @@ $animationSpeed: 10s;
     align-items: center;
     width: max-content;
 
-    will-change: transform;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     will-change: transform;
@@ -78,5 +78,9 @@ $animationSpeed: 10s;
   &__skill-icon {
     object-fit: contain;
     width: 125px;
+
+    @media only screen and (max-width: 801px) {
+      width: 80px;
+    }
   }
 }

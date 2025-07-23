@@ -1,7 +1,7 @@
 .box-layout {
   &__container {
     border: 1px solid #1e294080;
-    padding: 2rem 4rem  4rem;
+    padding: 2rem 4rem 4rem;
     border-radius: 2rem;
   }
 
@@ -11,6 +11,18 @@
     margin-bottom: 2rem;
 
     color: #0d0d0d;
+
+    @media only screen and (min-width: 860px) and (max-width: 933px) {
+      font-size: 3.5rem;
+    }
+
+    @media only screen and (max-width: 633px) {
+      font-size: 3.5rem;
+    }
+
+    @media only screen and (max-width: 430px) {
+      font-size: 3rem;
+    }
   }
 
   &__children {
