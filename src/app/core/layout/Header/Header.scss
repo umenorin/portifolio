@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
 
-    background-color: #2d9bb4;
+    background-color: #355C7D;
     margin: 2rem auto;
     width: 85vw;
     padding: 2rem;
@@ -48,7 +48,7 @@
     &-container {
       max-width: 5rem;
       max-height: 3.5rem;
-      object-fit: fill;
+      cursor: pointer;
 
       @media only screen and (max-width: 700px) {
         display: none;

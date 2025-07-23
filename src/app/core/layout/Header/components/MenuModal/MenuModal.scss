@@ -1,8 +1,9 @@
 .menu-modal {
   position: fixed;
+
+  z-index: 2;
   &__background {
     width: 0;
-    z-index: 1;
     &--open {
       display: block;
       position: fixed;
@@ -15,13 +16,12 @@
   }
 
   &__container {
-    z-index: 2;
     width: 0;
     height: 100vh;
     position: fixed;
     right: -5rem;
     top: 0;
-    background-color: #2d9bb4;
+    background-color: #355c7d;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@
     }
 
     &--close {
-      animation: slide-out 0.5s forwards;
+      animation: slide-out 0.2s forwards;
     }
   }
 
@@ -48,6 +48,7 @@
   &__paragraph {
     color: var(--light-color-text);
     font-size: var(--size-medium);
+    margin-bottom: 1rem;
   }
 
   &__routers {
@@ -62,7 +63,7 @@
 
   &__router-link {
     animation: 0.5s ease-out;
-
+    padding: 5px;
     &:link,
     &:visited {
       font-size: 2.5rem;
@@ -73,6 +74,7 @@
 
     &:hover {
       text-decoration: underline;
+      border-radius: 5px;
     }
 
     &.active {
@@ -84,13 +86,18 @@
     &-container {
       max-width: 5rem;
       max-height: 3.5rem;
-      object-fit: fill;
+      cursor: pointer;
+      margin-bottom: 8rem;
     }
 
     &-image {
       width: 100%;
       height: 100%;
     }
+  }
+
+  &__line {
+    color: white;
   }
 }
 

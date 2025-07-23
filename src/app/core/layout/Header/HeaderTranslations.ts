@@ -1,6 +1,6 @@
 const HeaderTranslation = {
   pt_br: {
-    home: "inicio",
+    home: "Início",
     about: "Sobre mim",
     projects: "Projetos",
     language: "Idioma"

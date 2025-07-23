@@ -41,7 +41,7 @@ const MenuModal: Component<MenuModalProps> = (props) => {
     setTimeout(() => {
       setIsOpen(false);
       setIsClosing(false);
-    }, 500); // igual ao duration da animação
+    }, 300);
   }
 
   if (props.openModal) {
@@ -104,6 +104,8 @@ const MenuModal: Component<MenuModalProps> = (props) => {
             alt={language() == "pt_br" ? "portugues" : "english"}
           />
         </div>
+
+        <hr class="menu-modal__line" />
       </div>
     </div>
   );
