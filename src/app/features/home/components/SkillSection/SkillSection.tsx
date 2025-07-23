@@ -1,4 +1,4 @@
-import type { Component } from "solid-js";
+import { useContext, type Component } from "solid-js";
 
 import "./SkillSection.scss";
 import Section from "../../../../core/layout/Section/Section";
@@ -18,6 +18,8 @@ import react from "../../../../../assets/images/skill_section/React.webp";
 import sass from "../../../../../assets/images/skill_section/sass.webp";
 import solid from "../../../../../assets/images/skill_section/solid.webp";
 import ts from "../../../../../assets/images/skill_section/TS.webp";
+import { LanguageCode, LanguageContext } from "../../../../core/context/LanguageContext";
+import HomePageTranslation from "../../HomePageTranslations";
 
 const firstHalfSkills = [
   { name: "Angular", icon: angular },
@@ -40,9 +42,12 @@ const secondHalfSkills = [
 ];
 
 const SkillSection: Component = () => {
+  const [language, _setLanguage] = useContext(LanguageContext);
+  const t = () => HomePageTranslation[language() as LanguageCode];
+
   return (
     <Section>
-      <h2 class="skill-section__title">Skills</h2>
+      <h2 class="skill-section__title">{t().sectionSkillsTitle}</h2>
       <div class="skill-section__carousel">
         <Carousel skills={firstHalfSkills} reverseRoll={false} />
         <Carousel skills={secondHalfSkills} reverseRoll={true} />

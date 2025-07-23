@@ -1,10 +1,18 @@
-import type { Component } from "solid-js";
+import { useContext, type Component } from "solid-js";
 
 import "./InfoSection.scss";
 import Section from "../../../../core/layout/Section/Section";
 import BoxLayout from "./components/BoxLayout/BoxLayout";
+import {
+  LanguageCode,
+  LanguageContext,
+} from "../../../../core/context/LanguageContext";
+import HomePageTranslation from "../../HomePageTranslations";
 
 const InfoSection: Component = () => {
+  const [language, _setLanguage] = useContext(LanguageContext);
+  const t = () => HomePageTranslation[language() as LanguageCode];
+
   const formatEmail = (email: any) => {
     if (email.includes("@")) {
       return email
@@ -20,17 +28,17 @@ const InfoSection: Component = () => {
   return (
     <Section>
       <div class="info-section__container">
-        <BoxLayout title="Serviços">
+        <BoxLayout title={t().sectionServicesTitle}>
           <ul>
-            <li class="info-section__text">Landing pages</li>
-            <li class="info-section__text">Portifólio</li>
-            <li class="info-section__text">Componentização em framework</li>
-            <li class="info-section__text">Manutenção de código front-end</li>
-            <li class="info-section__text">Conversão de design para código</li>
+            <li class="info-section__text">{t().servicesList.value1}</li>
+            <li class="info-section__text">{t().servicesList.value2}</li>
+            <li class="info-section__text">{t().servicesList.value3}</li>
+            <li class="info-section__text">{t().servicesList.value4}</li>
+            <li class="info-section__text">{t().servicesList.value5}</li>
           </ul>
         </BoxLayout>
 
-        <BoxLayout title="Fale Comigo">
+        <BoxLayout title={t().sectionContactTitle}>
           <a
             href="mailto:ruan_costa_oliveira@outlook.com"
             class="info-section__text info-section__text--link "

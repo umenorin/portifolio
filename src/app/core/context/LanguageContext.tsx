@@ -1,4 +1,5 @@
 import { createContext, useContext } from "solid-js";
+
 export type LanguageCode = 'pt_br' | 'en_us';
 export const LanguageContext = createContext<any>();
 

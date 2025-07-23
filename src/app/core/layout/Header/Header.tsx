@@ -7,8 +7,8 @@ import brazil from "../../../../assets/images/flags/brazil_42x39.webp";
 import usa from "../../../../assets/images/flags/usa_74x39.webp";
 import { LanguageCode, LanguageContext } from "../../context/LanguageContext";
 import HeaderTranslation from "./HeaderTranslations";
-import Logo from "./componets/Logo/Logo";
-import MenuModal from "./componets/MenuModal/MenuModal";
+import Logo from "./components/Logo/Logo";
+import MenuModal from "./components/MenuModal/MenuModal";
 import { MenuContext } from "../../context/MenuContext";
 
 const Header: Component = () => {

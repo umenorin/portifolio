@@ -1,9 +1,9 @@
 import { type Component } from "solid-js";
 
 import "./HomePage.scss";
-import IntroSection from "../componets/IntroSection/IntroSection";
-import InfoSection from "../componets/InfoSection/InfoSection";
-import SkillSection from "../componets/SkillSection/SkillSection";
+import IntroSection from "../components/IntroSection/IntroSection";
+import InfoSection from "../components/InfoSection/InfoSection";
+import SkillSection from "../components/SkillSection/SkillSection";
 
 const HomePage: Component = () => {
   return (
