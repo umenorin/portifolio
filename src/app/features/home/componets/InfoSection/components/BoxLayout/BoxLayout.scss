@@ -1,0 +1,21 @@
+.box-layout {
+  &__container {
+    border: 1px solid #1e294080;
+    padding: 2rem 4rem  4rem;
+    border-radius: 2rem;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+
+    color: #0d0d0d;
+  }
+
+  &__children {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

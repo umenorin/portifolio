@@ -1,8 +1,12 @@
-import type { Component } from "solid-js";
+import type { Component, JSX } from "solid-js";
 
 import "./Section.scss";
 
-const Section: Component = (props: any) => {
+interface SectionProps {
+  children: JSX.Element;
+}
+
+const Section: Component<SectionProps> = (props: any) => {
   return <div class="section-container">{props.children}</div>;
 };
 

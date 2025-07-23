@@ -1,0 +1,27 @@
+.info-section {
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+
+    @media only screen and (max-width: 1180px) {
+      flex-direction: column;
+      gap: 5rem;
+      width: 70vw;
+      margin: auto;
+    }
+  }
+
+  &__text {
+    font-size: 2.5rem;
+    list-style-position: inside;
+    color: #737373;
+
+    &--link {
+      &:link,
+      &:visited {
+        text-decoration: underline;
+        display: block;
+      }
+    }
+  }
+}
