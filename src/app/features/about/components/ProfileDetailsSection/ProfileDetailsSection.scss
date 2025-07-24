@@ -83,6 +83,11 @@
   @media only screen and (max-width: 1000px) {
     width: 70vw;
   }
+
+  &__text {
+    margin-bottom: 1rem;
+  }
+
   &__track {
     display: flex;
     overflow-x: auto;
@@ -90,6 +95,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+
 
     > * {
       flex: 0 0 100%;

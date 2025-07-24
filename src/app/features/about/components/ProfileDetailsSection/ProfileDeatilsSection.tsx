@@ -98,6 +98,10 @@ const ProfileDetailsSection: Component = () => {
         </div>
 
         <div class="profile-slider">
+          <p class=" profile-slider__text profile-details-section__text">
+            *Arraste para o lado para ver mais opções
+          </p>
+
           <div class="profile-slider__track" ref={setTrackRef}>
             <BoxLayout title="Interesses">
               <p class="profile-details-section__text">
