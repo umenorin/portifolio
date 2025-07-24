@@ -1,0 +1,119 @@
+.profile-details-section {
+  max-width: 88rem;
+
+  &__container {
+    display: flex;
+    gap: 5rem;
+    margin-bottom: 5rem;
+
+    @media only screen and (max-width: 1000px) {
+      flex-direction: column;
+      width: 70vw;
+      margin: 0 auto 5rem;
+    }
+  }
+
+  &__item {
+    list-style: none;
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 2rem; // espaço para a bolinha
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #737373;
+      font-size: 2rem;
+      line-height: 1;
+    }
+  }
+
+  &__content-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__social-media {
+    display: inline-block;
+    max-width: 3.5rem;
+  }
+
+  &__text {
+    font-size: 2rem;
+    list-style-position: inside;
+    color: #737373;
+
+    @media only screen and (min-width: 860px) and (max-width: 933px) {
+      font-size: 2rem;
+    }
+
+    @media only screen and (max-width: 430px) {
+      font-size: 1.7rem;
+    }
+
+    &--link {
+      &:link,
+      &:visited {
+        text-decoration: underline;
+        display: block;
+      }
+    }
+  }
+
+  &__slider {
+    @media only screen and (max-width: 1000px) {
+      width: 70vw;
+      margin: auto;
+    }
+  }
+}
+
+.profile-slider {
+  overflow: hidden;
+  position: relative;
+
+  @media only screen and (max-width: 1000px) {
+    width: 70vw;
+  }
+  &__track {
+    display: flex;
+    overflow-x: auto;
+    gap: 5rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    > * {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  &__dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    background: #ccc;
+    border-radius: 50%;
+
+    &.active {
+      background: #333;
+    }
+  }
+}
