@@ -1,0 +1,23 @@
+.personal-status {
+  &__container {
+    display: flex;
+    align-items: center;
+    background-color: #355c7d;
+    width: fit-content;
+    padding: 7px;
+    border-radius: 1rem;
+  }
+
+  &__paragraph {
+    font-size: 1.5rem;
+    color: #f2f2f2;
+
+    &--active {
+      color: #38c70e;
+    }
+  }
+
+  &__image {
+    margin-right: 5px;
+  }
+}

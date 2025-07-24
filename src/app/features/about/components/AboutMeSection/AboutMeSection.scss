@@ -6,6 +6,13 @@
     &-info {
       max-width: 70rem;
     }
+
+    &-personal {
+      display: flex;
+      margin: auto;
+      gap: 4rem;
+
+    }
   }
 
   &__image {
@@ -40,6 +47,6 @@
 
   &__paragraph {
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
 }
-

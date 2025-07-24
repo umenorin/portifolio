@@ -3,6 +3,9 @@ import type { Component } from "solid-js";
 import "./AboutMeSection.scss";
 import Section from "../../../../core/layout/Section/Section";
 import me from "../../../../../assets/images/about_section/me.webp";
+import PersonalStatus from "./components/PersonalStatus/PersonalStatus";
+
+import { AboutMeIcons } from "./AboutMeIcons";
 
 const AboutMeSection: Component = () => {
   return (
@@ -24,6 +27,19 @@ const AboutMeSection: Component = () => {
             pós-graduada em UI/UX (Unyleya) e atualmente cursando Análise e
             Desenvolvimento de Sistemas (Mackenzie).
           </p>
+          <div class="about-section__container-personal">
+            <PersonalStatus icon={AboutMeIcons.cake} text="22 anos" status="" />
+            <PersonalStatus
+              icon={AboutMeIcons.location}
+              text="Guarapari / ES"
+              status=""
+            />
+            <PersonalStatus
+              icon={AboutMeIcons.dot}
+              text="Disponível"
+              status="active"
+            />
+          </div>
         </div>
       </div>
     </Section>
