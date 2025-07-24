@@ -5,6 +5,7 @@ import { MainLayout } from "./core/layout/MainLayout/MainLayout";
 import { createSignal } from "solid-js";
 import { LanguageContext } from "./core/context/LanguageContext";
 import AboutMePage from "./features/about/AboutMePage/AboutMePage";
+import NotFound from "./features/notfound/NotFound";
 
 const root = document.getElementById("root");
 
@@ -16,6 +17,7 @@ render(
       <Router root={MainLayout}>
         <Route path="/" component={HomePage} />
         <Route path="/about" component={AboutMePage} />
+        <Route path="**" component={NotFound} />
       </Router>
     </LanguageContext.Provider>
   ),

@@ -1,0 +1,16 @@
+.not-found {
+  width: 80%;
+
+  &__title {
+    font-size: 5rem;
+  }
+
+  &__subtitle {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+  }
+}
