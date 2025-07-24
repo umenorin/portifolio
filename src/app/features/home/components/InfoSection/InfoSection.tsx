@@ -2,12 +2,12 @@ import { useContext, type Component } from "solid-js";
 
 import "./InfoSection.scss";
 import Section from "../../../../core/layout/Section/Section";
-import BoxLayout from "./components/BoxLayout/BoxLayout";
 import {
   LanguageCode,
   LanguageContext,
 } from "../../../../core/context/LanguageContext";
 import HomePageTranslation from "../../HomePageTranslations";
+import BoxLayout from "../../../../core/shared/BoxLayout/BoxLayout";
 
 const InfoSection: Component = () => {
   const [language, _setLanguage] = useContext(LanguageContext);

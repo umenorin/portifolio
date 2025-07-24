@@ -11,6 +11,11 @@
   &__paragraph {
     font-size: 1.5rem;
     color: #f2f2f2;
+    font-weight: 600;
+
+    @media only screen and (max-width: 450px) {
+      font-size: 1rem;
+    }
 
     &--active {
       color: #38c70e;

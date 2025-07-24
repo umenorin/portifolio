@@ -5,13 +5,20 @@
 
     &-info {
       max-width: 70rem;
+
+      @media only screen and (max-width: 1020px) {
+        max-width: 70rem;
+        min-width: 0;
+      }
     }
 
     &-personal {
       display: flex;
-      margin: auto;
       gap: 4rem;
 
+      @media only screen and (max-width: 1020px) {
+        gap: 2rem;
+      }
     }
   }
 
@@ -20,6 +27,23 @@
     border: 2px solid black;
     overflow: hidden;
     max-width: 36rem;
+    min-width: 35rem;
+
+    @media only screen and (max-width: 1020px) {
+      display: none;
+    }
+
+    &--vertical-size {
+      display: none;
+
+      @media only screen and (max-width: 1020px) {
+        max-width: 80rem;
+        display: block;
+        margin-bottom: 2rem;
+
+        min-width: 0;
+      }
+    }
   }
 
   &__photo {
@@ -27,22 +51,18 @@
     height: 100%;
   }
 
+  &__content {
+    @media only screen and (max-width: 1020px) {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 3rem;
+    }
+  }
+
   &__title {
     font-size: 5rem;
     margin-bottom: 3rem;
     color: #0d0d0d;
-
-    @media only screen and (min-width: 860px) and (max-width: 933px) {
-      font-size: 3.5rem;
-    }
-
-    @media only screen and (max-width: 633px) {
-      font-size: 3.5rem;
-    }
-
-    @media only screen and (max-width: 430px) {
-      font-size: 3rem;
-    }
   }
 
   &__paragraph {

@@ -18,27 +18,40 @@ const AboutMeSection: Component = () => {
         <div class="about-section__container-info">
           <h1 class="about-section__title">Sobre Mim</h1>
 
-          <p class="about-section__paragraph">
-            Designer e desenvolvedora do Rio de Janeiro com foco em criar
-            soluções digitais que unem estética, funcionalidade e tecnologia.
-            Minha trajetória é dedicada a explorar a sinergia entre o design
-            criativo e o desenvolvimento técnico, atuando de ponta a ponta no
-            ciclo de vida de um produto. Formada em Design Digital (PUC-Rio),
-            pós-graduada em UI/UX (Unyleya) e atualmente cursando Análise e
-            Desenvolvimento de Sistemas (Mackenzie).
-          </p>
-          <div class="about-section__container-personal">
-            <PersonalStatus icon={AboutMeIcons.cake} text="22 anos" status="" />
-            <PersonalStatus
-              icon={AboutMeIcons.location}
-              text="Guarapari / ES"
-              status=""
-            />
-            <PersonalStatus
-              icon={AboutMeIcons.dot}
-              text="Disponível"
-              status="active"
-            />
+          <div class="about-section__image about-section__image--vertical-size ">
+            <img src={me} alt="minha foto" class="about-section__photo" />
+          </div>
+
+          <div class="about-section__content">
+            <p class="about-section__paragraph">
+              Designer e desenvolvedora do Rio de Janeiro com foco em criar
+              soluções digitais que unem estética, funcionalidade e tecnologia.
+              Minha trajetória é dedicada a explorar a sinergia entre o design
+              criativo e o desenvolvimento técnico, atuando de ponta a ponta no
+              ciclo de vida de um produto. Formada em Design Digital (PUC-Rio),
+              pós-graduada em UI/UX (Unyleya) e atualmente cursando Análise e
+              Desenvolvimento de Sistemas (Mackenzie).
+            </p>
+
+            <div class="about-section__container-personal">
+              <PersonalStatus
+                icon={AboutMeIcons.cake}
+                text="22 anos"
+                status=""
+              />
+
+              <PersonalStatus
+                icon={AboutMeIcons.location}
+                text="Guarapari / ES"
+                status=""
+              />
+
+              <PersonalStatus
+                icon={AboutMeIcons.dot}
+                text="Disponível"
+                status="active"
+              />
+            </div>
           </div>
         </div>
       </div>

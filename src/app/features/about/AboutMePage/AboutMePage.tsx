@@ -7,6 +7,8 @@ const AboutMePage: Component = () => {
   return (
     <>
       <AboutMeSection />
+      <hr class="about__line" />
+
     </>
   );
 };

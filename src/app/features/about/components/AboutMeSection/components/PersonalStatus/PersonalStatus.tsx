@@ -1,4 +1,4 @@
-import type { Component } from "solid-js";
+import { createSignal, onCleanup, onMount, type Component } from "solid-js";
 
 import "./PersonalStatus.scss";
 
@@ -9,14 +9,26 @@ interface PersonalStatusProp {
 }
 
 const PersonalStatus: Component<PersonalStatusProp> = (props) => {
+  const [width, setWidth] = createSignal(window.innerWidth);
+
+  const updateWidth = () => setWidth(window.innerWidth);
+
+  onMount(() => {
+    window.addEventListener("resize", updateWidth);
+  });
+
+  onCleanup(() => {
+    window.removeEventListener("resize", updateWidth);
+  });
+
   return (
     <div class="personal-status__container">
       <div class="personal-status__image">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          height="24px"
+          height={`${width() > 450 ? "24px" : "20"}`}
           viewBox="0 -960 960 960"
-          width="24px"
+          width={`${width() > 450 ? "24px" : "20"}`}
           fill={props.status == "active" ? "#38c70e" : "#f2f2f2"}
         >
           <path d={props.icon} />
