@@ -13,11 +13,14 @@ const MyProjectSection: Component = () => {
       <div class="project-section__container">
         <div class="project-section__card">
           <BoxLayout title="Veronese Maquetes">
-            <div
-              class="project-section__image-container"
-              style={`background-image: url(${veronese});`}
-            >
-              <a class="project-section__image" href="/projects/veronese-maquetes"></a>
+            <div class="project-section__image-container">
+              <img src={veronese} class="project-section__image" />
+              <a
+                class="project-section__image-link"
+                href="/projects/veronese-maquetes"
+              >
+                Ver Mais
+              </a>
             </div>
 
             <p class="project-section__paragraph">
@@ -37,12 +40,16 @@ const MyProjectSection: Component = () => {
 
         <div class="project-section__card">
           <BoxLayout title="Le Libre">
-            <div
-              class="project-section__image-container"
-              style={`background-image: url(${lelibre});`}
-            >
-              <a class="project-section__image" href="/projects/lelibre"></a>
+            <div class="project-section__image-container">
+              <img src={lelibre} class="project-section__image" />
+              <a
+                class="project-section__image-link"
+                href="/projects/veronese-maquetes"
+              >
+                Ver Mais
+              </a>
             </div>
+
             <p class="project-section__paragraph">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -60,12 +67,16 @@ const MyProjectSection: Component = () => {
 
         <div class="project-section__card">
           <BoxLayout title="MatchTrip">
-            <div
-              class="project-section__image-container"
-              style={`background-image: url(${matchtrip});`}
-            >
-              <a class="project-section__image" href="/projects/matchtrip"></a>
+            <div class="project-section__image-container">
+              <img src={matchtrip} class="project-section__image" />
+              <a
+                class="project-section__image-link"
+                href="/projects/veronese-maquetes"
+              >
+                Ver Mais
+              </a>
             </div>
+
             <p class="project-section__paragraph">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -75,7 +86,8 @@ const MyProjectSection: Component = () => {
               electronic typesetting, remaining essentially unchanged. It was
               popularised in the 1960s with the release of Letraset sheets
               containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
+              publishing software l
+              ike Aldus PageMaker including versions of
               Lorem Ipsum.
             </p>
           </BoxLayout>
