@@ -27,13 +27,11 @@ const MenuModal: Component<MenuModalProps> = (props) => {
   const switchLanguage = () => {
     if (language() == "pt_br") {
       setLanguage("en_us");
-      console.log(language());
       return;
     }
 
     setLanguage("pt_br");
 
-    console.log(language());
   };
 
   function CloseMenu() {
@@ -59,7 +57,7 @@ const MenuModal: Component<MenuModalProps> = (props) => {
       <div
         class={`menu-modal__container ${isOpen() ? "menu-modal__container--open" : ""} ${isClosing() ? "menu-modal__container--close" : ""}`}
       >
-        <div class="menu-modal__logo">
+        <div class="menu-modal__logo" onclick={CloseMenu}>
           <Logo />
         </div>
         <div class="menu-modal__routers">
@@ -97,12 +95,14 @@ const MenuModal: Component<MenuModalProps> = (props) => {
 
         <p class="menu-modal__paragraph">{t().language}: </p>
 
-        <div onclick={switchLanguage} class="menu-modal__language-container">
-          <img
-            class="menu-modal__language-image"
-            src={language() == "pt_br" ? brazil : usa}
-            alt={language() == "pt_br" ? "portugues" : "english"}
-          />
+        <div class="menu-modal__language-container">
+          <a onclick={switchLanguage}>
+            <img
+              class="menu-modal__language-image"
+              src={language() == "pt_br" ? brazil : usa}
+              alt={language() == "pt_br" ? "portugues" : "english"}
+            />
+          </a>
         </div>
 
         <hr class="menu-modal__line" />

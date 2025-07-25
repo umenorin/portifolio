@@ -20,18 +20,14 @@ const Header: Component = () => {
   const switchLanguage = () => {
     if (language() == "pt_br") {
       setLanguage("en_us");
-      console.log(language());
       return;
     }
 
     setLanguage("pt_br");
-
-    console.log(language());
   };
 
   const toggleMenuStatus = () => {
     setIsOpen(!isOpen());
-    console.log(isOpen());
   };
 
   return (
@@ -73,12 +69,14 @@ const Header: Component = () => {
           </A>
         </div>
 
-        <div onclick={switchLanguage} class="header__language-container">
-          <img
-            class="header__language-image"
-            src={language() == "pt_br" ? brazil : usa}
-            alt={language() == "pt_br" ? "portugues" : "english"}
-          />
+        <div class="header__language-container">
+          <a onclick={switchLanguage}>
+            <img
+              class="header__language-image"
+              src={language() == "pt_br" ? brazil : usa}
+              alt={language() == "pt_br" ? "portugues" : "english"}
+            />
+          </a>
         </div>
 
         <div class="header__button" onclick={toggleMenuStatus}>
