@@ -17,7 +17,7 @@ const MyProjectSection: Component = () => {
               class="project-section__image-container"
               style={`background-image: url(${veronese});`}
             >
-              <a class="project-section__image"></a>
+              <a class="project-section__image" href="/projects/veronese-maquetes"></a>
             </div>
 
             <p class="project-section__paragraph">
@@ -41,7 +41,7 @@ const MyProjectSection: Component = () => {
               class="project-section__image-container"
               style={`background-image: url(${lelibre});`}
             >
-              <a class="project-section__image"></a>
+              <a class="project-section__image" href="/projects/lelibre"></a>
             </div>
             <p class="project-section__paragraph">
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -64,7 +64,7 @@ const MyProjectSection: Component = () => {
               class="project-section__image-container"
               style={`background-image: url(${matchtrip});`}
             >
-              <a class="project-section__image"></a>
+              <a class="project-section__image" href="/projects/matchtrip"></a>
             </div>
             <p class="project-section__paragraph">
               Lorem Ipsum is simply dummy text of the printing and typesetting
