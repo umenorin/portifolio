@@ -1,0 +1,72 @@
+.project-section {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin: auto;
+    justify-content: center;
+  }
+
+  &__card {
+    max-width: 100rem;
+  }
+
+  &__image {
+    display: block;
+    height: 30rem;
+    width: 100%;
+    visibility: 1%;
+    margin: auto;
+
+    &:hover {
+      visibility: 100;
+      background-color: rgba(23, 23, 23, 0.4);
+
+      &::after {
+        content: "Ver mais";
+        position: absolute;
+        top: 50%;
+        left: 43%;
+
+        font-size: 3rem;
+        color: white;
+        text-decoration: underline;
+
+        @media only screen and (max-width: 735px) {
+          left: 38%;
+        }
+
+        @media only screen and (max-width: 472px) {
+          font-size: 2rem;
+
+          left: 34%;
+        }
+      }
+    }
+
+    &-container {
+      position: relative;
+      margin: auto;
+      max-width: 60rem;
+      border-radius: 1rem;
+      overflow: hidden;
+
+      background-size: cover;
+      background-position: center top;
+      width: 100%;
+    }
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+    max-width: 60rem;
+
+    @media only screen and (min-width: 860px) and (max-width: 933px) {
+      font-size: 1.7rem;
+    }
+
+    @media only screen and (max-width: 430px) {
+      font-size: 1.5rem;
+    }
+  }
+}

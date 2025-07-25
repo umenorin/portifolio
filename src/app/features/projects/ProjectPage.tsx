@@ -1,13 +1,12 @@
 import type { Component } from "solid-js";
 
 import "./ProjectPage.scss";
+import MyProjectSection from "./components/MyProjectSection/MyProjectSection";
 
 const ProjectPage: Component = () => {
   return (
-    <>
-      <p class="footer__text">My  Project Page</p>
-    </>
-  );
+    <MyProjectSection />
+ );
 };
 
 export default ProjectPage;
