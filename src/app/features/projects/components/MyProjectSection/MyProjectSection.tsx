@@ -42,10 +42,7 @@ const MyProjectSection: Component = () => {
           <BoxLayout title="Le Libre">
             <div class="project-section__image-container">
               <img src={lelibre} class="project-section__image" />
-              <a
-                class="project-section__image-link"
-                href="/projects/veronese-maquetes"
-              >
+              <a class="project-section__image-link" href="/projects/lelibre">
                 Ver Mais
               </a>
             </div>
@@ -69,10 +66,7 @@ const MyProjectSection: Component = () => {
           <BoxLayout title="MatchTrip">
             <div class="project-section__image-container">
               <img src={matchtrip} class="project-section__image" />
-              <a
-                class="project-section__image-link"
-                href="/projects/veronese-maquetes"
-              >
+              <a class="project-section__image-link" href="/projects/matchtrip">
                 Ver Mais
               </a>
             </div>
@@ -86,8 +80,7 @@ const MyProjectSection: Component = () => {
               electronic typesetting, remaining essentially unchanged. It was
               popularised in the 1960s with the release of Letraset sheets
               containing Lorem Ipsum passages, and more recently with desktop
-              publishing software l
-              ike Aldus PageMaker including versions of
+              publishing software l ike Aldus PageMaker including versions of
               Lorem Ipsum.
             </p>
           </BoxLayout>

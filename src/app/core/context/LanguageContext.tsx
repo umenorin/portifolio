@@ -1,6 +1,7 @@
 import { createContext, useContext } from "solid-js";
 
-export type LanguageCode = 'pt_br' | 'en_us';
+export type LanguageCode = "pt_br" | "en_us";
+export type SubRouteCode =  "veronese" | "lelibre" | "matchtrip";
 export const LanguageContext = createContext<any>();
 
 export function useTheme() {

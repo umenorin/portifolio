@@ -7,9 +7,7 @@ import { LanguageContext } from "./core/context/LanguageContext";
 import AboutMePage from "./features/about/AboutMePage/AboutMePage";
 import NotFound from "./features/notfound/NotFound";
 import ProjectPage from "./features/projects/ProjectPage";
-import VeroneseMaquetesPage from "./features/projects/subroutes/VeroneseMaquetesPage/VeroneseMaquetesPage";
-import LeLibrePage from "./features/projects/subroutes/LeLibrePage/LeLivrePage";
-import MatchTripPage from "./features/projects/subroutes/MatchTrip/MatchTripPage";
+import SingleProject from "./features/projects/subroutes/SingleProject/SingleProject";
 
 const root = document.getElementById("root");
 
@@ -22,9 +20,9 @@ render(
         <Route path="/" component={HomePage} />
         <Route path="/about" component={AboutMePage} />
         <Route path="/projects" component={ProjectPage} />
-        <Route path="/projects/veronese-maquetes" component={VeroneseMaquetesPage} />
-        <Route path="/projects/lelibre" component={LeLibrePage} />
-        <Route path="/projects/matchtrip" component={MatchTripPage} />
+        <Route path="/projects/veronese-maquetes" component={SingleProject} />
+        <Route path="/projects/lelibre" component={SingleProject} />
+        <Route path="/projects/matchtrip" component={SingleProject} />
         <Route path="**" component={NotFound} />
       </Router>
     </LanguageContext.Provider>
