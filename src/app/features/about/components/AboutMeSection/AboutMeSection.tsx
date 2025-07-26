@@ -1,4 +1,4 @@
-import type { Component } from "solid-js";
+import { useContext, type Component } from "solid-js";
 
 import "./AboutMeSection.scss";
 import Section from "../../../../core/layout/Section/Section";
@@ -6,8 +6,17 @@ import me from "../../../../../assets/images/about_section/me.webp";
 import PersonalStatus from "./components/PersonalStatus/PersonalStatus";
 
 import { AboutMeIcons } from "./AboutMeIcons";
+import {
+  LanguageCode,
+  LanguageContext,
+} from "../../../../core/context/LanguageContext";
+import AboutTranslation from "../../AboutTraslation";
 
 const AboutMeSection: Component = () => {
+  const [language, _setLanguage] = useContext(LanguageContext);
+
+  const t = () => AboutTranslation[language() as LanguageCode];
+
   return (
     <Section>
       <div class="about-section__container">
@@ -16,22 +25,14 @@ const AboutMeSection: Component = () => {
         </div>
 
         <div class="about-section__container-info">
-          <h1 class="about-section__title">Sobre Mim</h1>
+          <h1 class="about-section__title">{t().title}</h1>
 
           <div class="about-section__image about-section__image--vertical-size ">
             <img src={me} alt="minha foto" class="about-section__photo" />
           </div>
 
           <div class="about-section__content">
-            <p class="about-section__paragraph">
-              Designer e desenvolvedora do Rio de Janeiro com foco em criar
-              soluções digitais que unem estética, funcionalidade e tecnologia.
-              Minha trajetória é dedicada a explorar a sinergia entre o design
-              criativo e o desenvolvimento técnico, atuando de ponta a ponta no
-              ciclo de vida de um produto. Formada em Design Digital (PUC-Rio),
-              pós-graduada em UI/UX (Unyleya) e atualmente cursando Análise e
-              Desenvolvimento de Sistemas (Mackenzie).
-            </p>
+            <p class="about-section__paragraph">{t().my_description} </p>
 
             <div class="about-section__container-personal">
               <PersonalStatus

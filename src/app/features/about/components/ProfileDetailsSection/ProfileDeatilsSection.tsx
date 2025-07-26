@@ -1,4 +1,4 @@
-import { createSignal, onMount, type Component } from "solid-js";
+import { createSignal, onMount, useContext, type Component } from "solid-js";
 
 import "./ProfileDetailsSection.scss";
 import Section from "../../../../core/layout/Section/Section";
@@ -6,8 +6,17 @@ import BoxLayout from "../../../../core/shared/BoxLayout/BoxLayout";
 
 import linkedin from "../../../../../assets/images/social_media/linkedin.webp";
 import github from "../../../../../assets/images/social_media/github.webp";
+import AboutTranslation from "../../AboutTraslation";
+import {
+  LanguageCode,
+  LanguageContext,
+} from "../../../../core/context/LanguageContext";
 
 const ProfileDetailsSection: Component = () => {
+  const [language, _setLanguage] = useContext(LanguageContext);
+
+  const t = () => AboutTranslation[language() as LanguageCode];
+
   const items = [1, 2];
   const [currentIndex, setCurrentIndex] = createSignal(0);
   let trackRef: HTMLDivElement;
@@ -57,7 +66,7 @@ const ProfileDetailsSection: Component = () => {
     <Section>
       <div class="profile-details-section">
         <div class="profile-details-section__container">
-          <BoxLayout title="Redes Sociais">
+          <BoxLayout title={t().subtitle_social_media}>
             <ul>
               <li class="profile-details-section__item">
                 <a
@@ -96,7 +105,7 @@ const ProfileDetailsSection: Component = () => {
             </ul>
           </BoxLayout>
 
-          <BoxLayout title="Graduação">
+          <BoxLayout title={t().subtitle_graduation}>
             <ul>
               <li class="profile-details-section__item  profile-details-section__text">
                 Sistema de Informação - UVV (2022-2025)
@@ -107,31 +116,19 @@ const ProfileDetailsSection: Component = () => {
 
         <div class="profile-slider">
           <p class=" profile-slider__text profile-details-section__text">
-            *Arraste para o lado para ver mais opções
+            {t().obs_text}
           </p>
 
           <div class="profile-slider__track" ref={setTrackRef}>
-            <BoxLayout title="Interesses">
+            <BoxLayout title={t().subtitle_interests}>
               <p class="profile-details-section__text">
-                Designer e desenvolvedora do Rio de Janeiro com foco em criar
-                soluções digitais que unem estética, funcionalidade e
-                tecnologia. Minha trajetória é dedicada a explorar a sinergia
-                entre o design criativo e o desenvolvimento técnico, atuando de
-                ponta a ponta no ciclo de vida de um produto. Formada em Design
-                Digital (PUC-Rio), pós-graduada em UI/UX (Unyleya) e atualmente
-                cursando Análise e Desenvolvimento de Sistemas (Mackenzie).
+                {t().description_interests}
               </p>
             </BoxLayout>
 
-            <BoxLayout title="Hobbies">
+            <BoxLayout title={t().subtitle_Hobbies}>
               <p class="profile-details-section__text">
-                Designer e desenvolvedora do Rio de Janeiro com foco em criar
-                soluções digitais que unem estética, funcionalidade e
-                tecnologia. Minha trajetória é dedicada a explorar a sinergia
-                entre o design criativo e o desenvolvimento técnico, atuando de
-                ponta a ponta no ciclo de vida de um produto. Formada em Design
-                Digital (PUC-Rio), pós-graduada em UI/UX (Unyleya) e atualmente
-                cursando Análise e Desenvolvimento de Sistemas (Mackenzie).
+                {t().description_Hobbies}
               </p>
             </BoxLayout>
           </div>
