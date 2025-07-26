@@ -20,20 +20,9 @@ const ProfileDetailsSection: Component = () => {
   const items = [1, 2];
   const [currentIndex, setCurrentIndex] = createSignal(0);
   let trackRef: HTMLDivElement;
-  let scrollInterval: number | undefined;
 
   const setTrackRef = (el: HTMLDivElement) => {
     trackRef = el;
-  };
-
-  const startAutoScroll = () => {
-    scrollInterval = setInterval(() => {
-      if (!trackRef) return;
-      const width = trackRef.clientWidth;
-      const next = (currentIndex() + 1) % items.length;
-      trackRef.scrollTo({ left: width * next, behavior: "smooth" });
-      setCurrentIndex(next);
-    }, 10000);
   };
 
   onMount(() => {
@@ -43,24 +32,23 @@ const ProfileDetailsSection: Component = () => {
       const index = Math.round(scrollLeft / width);
       setCurrentIndex(index);
     });
-
-    startAutoScroll();
-
-    trackRef.addEventListener("mouseenter", () => {
-      clearInterval(scrollInterval);
-    });
-
-    trackRef.addEventListener("mouseleave", () => {
-      startAutoScroll();
-    });
   });
 
-  setInterval(() => {
+  const goLeft = () => {
+    if (!trackRef) return;
+    const width = trackRef.clientWidth;
+    const prev = (currentIndex() - 1 + items.length) % items.length;
+    trackRef.scrollTo({ left: width * prev, behavior: "smooth" });
+    setCurrentIndex(prev);
+  };
+
+  const goRight = () => {
+    if (!trackRef) return;
     const width = trackRef.clientWidth;
     const next = (currentIndex() + 1) % items.length;
     trackRef.scrollTo({ left: width * next, behavior: "smooth" });
     setCurrentIndex(next);
-  }, 10000);
+  };
 
   return (
     <Section>
@@ -118,6 +106,32 @@ const ProfileDetailsSection: Component = () => {
           <p class=" profile-slider__text profile-details-section__text">
             {t().obs_text}
           </p>
+
+          <div class="profile-slider__controls">
+            <button class="profile-slider__button left" onClick={goLeft}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#FFFFFF"
+              >
+                <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+              </svg>
+            </button>
+
+            <button class="profile-slider__button right" onClick={goRight}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#FFFFFF"
+              >
+                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+              </svg>
+            </button>
+          </div>
 
           <div class="profile-slider__track" ref={setTrackRef}>
             <BoxLayout title={t().subtitle_interests}>

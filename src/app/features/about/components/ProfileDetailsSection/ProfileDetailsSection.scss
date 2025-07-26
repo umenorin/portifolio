@@ -97,7 +97,6 @@
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 
-
     > * {
       flex: 0 0 100%;
       scroll-snap-align: start;
@@ -121,6 +120,31 @@
 
     &.active {
       background: #333;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  &__button {
+    background: rgba(0, 0, 0, 0.18);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
     }
   }
 }
