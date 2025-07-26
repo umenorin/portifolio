@@ -60,7 +60,11 @@ const ProfileDetailsSection: Component = () => {
           <BoxLayout title="Redes Sociais">
             <ul>
               <li class="profile-details-section__item">
-                <a class="profile-details-section__content-item">
+                <a
+                  class="profile-details-section__content-item"
+                  href="https://www.linkedin.com/in/ruan-costa-oliveira/"
+                  target="_blank"
+                >
                   <div class="profile-details-section__social-media">
                     <img
                       src={linkedin}
@@ -74,7 +78,11 @@ const ProfileDetailsSection: Component = () => {
               </li>
 
               <li class="profile-details-section__item">
-                <a class="profile-details-section__content-item">
+                <a
+                  class="profile-details-section__content-item"
+                  href="https://github.com/umenorin"
+                  target="_blank"
+                >
                   <div class="profile-details-section__social-media">
                     <img
                       src={github}
