@@ -16,6 +16,7 @@ const ProjectPageTranslation = {
       repository2: "https://github.com/umenorin/matchtrip-api",
       repository2_description: "repository (api)",
     },
+    see_more: "Ver Mais",
   },
   en_us: {
     veronese: {
@@ -34,6 +35,8 @@ const ProjectPageTranslation = {
       repository2: "https://github.com/umenorin/matchtrip-api",
       repository2_description: "repository (api)",
     },
+
+    see_more: "See More",
   },
 };
 export default ProjectPageTranslation;

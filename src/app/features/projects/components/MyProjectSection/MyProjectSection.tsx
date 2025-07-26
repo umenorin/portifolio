@@ -1,4 +1,4 @@
-import type { Component } from "solid-js";
+import { useContext, type Component } from "solid-js";
 
 import "./MyProjectSection.scss";
 import Section from "../../../../core/layout/Section/Section";
@@ -6,8 +6,16 @@ import BoxLayout from "../../../../core/shared/BoxLayout/BoxLayout";
 import veronese from "../../../../../assets/images/project_section/veronese.webp";
 import lelibre from "../../../../../assets/images/project_section/lelibre.webp";
 import matchtrip from "../../../../../assets/images/project_section/matchtrip.webp";
+import ProjectPageTranslation from "../../ProjectPageTranslation";
+import {
+  LanguageCode,
+  LanguageContext,
+} from "../../../../core/context/LanguageContext";
 
 const MyProjectSection: Component = () => {
+  const [language, _setLanguage] = useContext(LanguageContext);
+  const t = () => ProjectPageTranslation[language() as LanguageCode];
+
   return (
     <Section>
       <div class="project-section__container">
@@ -19,22 +27,11 @@ const MyProjectSection: Component = () => {
                 class="project-section__image-link"
                 href="/projects/veronese-maquetes"
               >
-                Ver Mais
+                {t().see_more}
               </a>
             </div>
 
-            <p class="project-section__paragraph">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
+            <p class="project-section__paragraph">{t().veronese.description}</p>
           </BoxLayout>
         </div>
 
@@ -43,22 +40,11 @@ const MyProjectSection: Component = () => {
             <div class="project-section__image-container">
               <img src={lelibre} class="project-section__image" />
               <a class="project-section__image-link" href="/projects/lelibre">
-                Ver Mais
+                {t().see_more}
               </a>
             </div>
 
-            <p class="project-section__paragraph">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
+            <p class="project-section__paragraph">{t().lelibre.description}</p>
           </BoxLayout>
         </div>
 
@@ -67,21 +53,12 @@ const MyProjectSection: Component = () => {
             <div class="project-section__image-container">
               <img src={matchtrip} class="project-section__image" />
               <a class="project-section__image-link" href="/projects/matchtrip">
-                Ver Mais
+                {t().see_more}
               </a>
             </div>
 
             <p class="project-section__paragraph">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software l ike Aldus PageMaker including versions of
-              Lorem Ipsum.
+              {t().matchtrip.description}
             </p>
           </BoxLayout>
         </div>
