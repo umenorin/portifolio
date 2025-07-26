@@ -22,7 +22,7 @@ const SingleProject: Component = () => {
   const matchtripURI = "matchtrip";
   const leLibreURI = "lelibre";
   let myImg;
-  let t;
+  let t: any;
 
   if (actualLocation.pathname.includes(veroneseURI)) {
     t = () =>
@@ -48,20 +48,52 @@ const SingleProject: Component = () => {
 
   return (
     <Section>
-      <div class="project-section__container">
-        <div class="project-section__card">
+      <div class="single-project__container">
+        <div class="single-project__card">
           <BoxLayout title="Veronese Maquetes">
-            <div class="project-section__image-container">
-              <img src={myImg} class="project-section__image" />
-              <a
-                class="project-section__image-link"
-                href="/projects/veronese-maquetes"
-              >
-                Ver Mais
-              </a>
+            <div class="single-project__image-container">
+              <img src={myImg} class="single-project__image" />
             </div>
 
-            <p class="project-section__paragraph">{t().description}</p>
+            <p class="single-project__paragraph">{t().description}</p>
+
+            <div class="single-project__urls">
+              {t().live_demo ? (
+                <a
+                  class="single-project__link"
+                  href={t().live_demo}
+                  target="_blank"
+                >
+                  Live Demo
+                </a>
+              ) : (
+                ""
+              )}
+
+              {t().repository1 ? (
+                <a
+                  class="single-project__link"
+                  href={t().repository1}
+                  target="_blank"
+                >
+                  {t().repository1_description}
+                </a>
+              ) : (
+                ""
+              )}
+
+              {t().repository2 ? (
+                <a
+                  class="single-project__link"
+                  href={t().repository2}
+                  target="_blank"
+                >
+                  {t().repository2_description}
+                </a>
+              ) : (
+                ""
+              )}
+            </div>
           </BoxLayout>
         </div>
       </div>

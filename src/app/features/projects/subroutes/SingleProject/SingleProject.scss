@@ -1,0 +1,36 @@
+.single-project {
+  &__image {
+    width: 100%;
+
+    &-container {
+      max-width: 60rem;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+
+    margin-bottom: 3rem;
+  }
+
+  &__urls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__link {
+    font-size: 1.8rem;
+
+    color: #355c7d;
+
+    &:hover {
+      color: #6190b1;
+      text-decoration: underline;
+    }
+  }
+}
