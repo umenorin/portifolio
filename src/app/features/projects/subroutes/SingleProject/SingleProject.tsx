@@ -1,4 +1,4 @@
-import { useContext, type Component } from "solid-js";
+import { For, useContext, type Component } from "solid-js";
 
 import "./SingleProject.scss";
 import veronese from "../../../../../assets/images/project_section/veronese.webp";
@@ -12,7 +12,9 @@ import {
   LanguageContext,
   SubRouteCode,
 } from "../../../../core/context/LanguageContext";
-import ProjectPageTranslation from "../../ProjectPageTranslation";
+import ProjectPageTranslation, {
+  IProjectDetails,
+} from "../../ProjectPageTranslation";
 import { useLocation } from "@solidjs/router";
 
 const SingleProject: Component = () => {
@@ -22,28 +24,30 @@ const SingleProject: Component = () => {
   const matchtripURI = "matchtrip";
   const leLibreURI = "lelibre";
   let myImg;
-  let t: any;
+  const t = getProjectDetails();
 
-  if (actualLocation.pathname.includes(veroneseURI)) {
-    t = () =>
-      ProjectPageTranslation[language() as LanguageCode][
-        "veronese" as SubRouteCode
-      ];
-    myImg = veronese;
-  } else if (actualLocation.pathname.includes(matchtripURI)) {
-    t = () =>
-      ProjectPageTranslation[language() as LanguageCode][
-        "matchtrip" as SubRouteCode
-      ];
+  function getProjectDetails(): IProjectDetails {
+    if (actualLocation.pathname.includes(veroneseURI)) {
+      myImg = veronese;
+      return ProjectPageTranslation[language() as LanguageCode].veronese;
+    }
 
-    myImg = matchtrip;
-  } else if (actualLocation.pathname.includes(leLibreURI)) {
-    t = () =>
-      ProjectPageTranslation[language() as LanguageCode][
-        "lelibre" as SubRouteCode
-      ];
+    if (actualLocation.pathname.includes(matchtripURI)) {
+      myImg = matchtrip;
+      return ProjectPageTranslation[language() as LanguageCode].matchtrip;
+    }
 
-    myImg = lelibre;
+    if (actualLocation.pathname.includes(leLibreURI)) {
+      myImg = lelibre;
+      return ProjectPageTranslation[language() as LanguageCode].lelibre;
+    }
+
+    return {
+      description: "Project not found",
+      demoUrl: undefined,
+      primaryRepo: undefined,
+      secondaryRepo: undefined,
+    };
   }
 
   return (
@@ -54,46 +58,30 @@ const SingleProject: Component = () => {
             <div class="single-project__image-container">
               <img src={myImg} class="single-project__image" />
             </div>
-
-            <p class="single-project__paragraph">{t().description}</p>
-
+            <p class="single-project__paragraph">{t.description}</p>
             <div class="single-project__urls">
-              {t().live_demo ? (
-                <a
-                  class="single-project__link"
-                  href={t().live_demo}
-                  target="_blank"
-                >
-                  Live Demo
-                </a>
-              ) : (
-                ""
-              )}
-
-              {t().repository1 ? (
-                <a
-                  class="single-project__link"
-                  href={t().repository1}
-                  target="_blank"
-                >
-                  {t().repository1_description}
-                </a>
-              ) : (
-                ""
-              )}
-
-              {t().repository2 ? (
-                <a
-                  class="single-project__link"
-                  href={t().repository2}
-                  target="_blank"
-                >
-                  {t().repository2_description}
-                </a>
-              ) : (
-                ""
-              )}
-            </div>
+              <For
+                each={[
+                  { url: t.demoUrl, text: "Live Demo" },
+                  { url: t.primaryRepo?.url, text: t.primaryRepo?.description },
+                  {
+                    url: t.secondaryRepo?.url,
+                    text: t.secondaryRepo?.description,
+                  },
+                ].filter((link) => link.url)}
+              >
+                {(link) => (
+                  <a
+                    class="single-project__link"
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.text || "View Repository"}
+                  </a>
+                )}
+              </For>
+            </div>{" "}
           </BoxLayout>
         </div>
       </div>

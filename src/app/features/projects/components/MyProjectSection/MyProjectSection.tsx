@@ -27,7 +27,7 @@ const MyProjectSection: Component = () => {
                 class="project-section__image-link"
                 href="/projects/veronese-maquetes"
               >
-                {t().see_more}
+                {t().seeMoreLink}
               </a>
             </div>
 
@@ -40,7 +40,7 @@ const MyProjectSection: Component = () => {
             <div class="project-section__image-container">
               <img src={lelibre} class="project-section__image" />
               <a class="project-section__image-link" href="/projects/lelibre">
-                {t().see_more}
+                {t().seeMoreLink}
               </a>
             </div>
 
@@ -53,7 +53,7 @@ const MyProjectSection: Component = () => {
             <div class="project-section__image-container">
               <img src={matchtrip} class="project-section__image" />
               <a class="project-section__image-link" href="/projects/matchtrip">
-                {t().see_more}
+                {t().seeMoreLink}
               </a>
             </div>
 

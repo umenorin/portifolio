@@ -1,42 +1,79 @@
-const ProjectPageTranslation = {
+export interface IProjectDetails {
+  description: string;
+  demoUrl?: string;
+  primaryRepo?: {
+    url: string;
+    description?: string;
+  };
+  secondaryRepo?: {
+    url: string;
+    description?: string;
+  };
+}
+
+interface IProjectCollection {
+  veronese: IProjectDetails;
+  lelibre: IProjectDetails;
+  matchtrip: IProjectDetails;
+  seeMoreLink: string;
+}
+
+interface ILocalizedProjects {
+  pt_br: IProjectCollection;
+  en_us: IProjectCollection;
+}
+
+const ProjectPageTranslation: ILocalizedProjects = {
   pt_br: {
     veronese: {
       description: "VERONESE FUNCIONOU!!",
-      live_demo: "https://www.veronesemaquetes.com.br/",
+      demoUrl: "https://www.veronesemaquetes.com.br/",
     },
     lelibre: {
       description: "LELIBRE FUNCIONOU!!",
-      repository1: "https://github.com/umenorin/Projeto-Resenha",
-      repository1_description: "repository",
+      primaryRepo: {
+        url: "https://github.com/umenorin/Projeto-Resenha",
+        description: "repository"
+      }
     },
     matchtrip: {
       description: "MATCHTRIP FUNCIONOU!!",
-      repository1: "https://github.com/umenorin/matchtrip-client",
-      repository1_description: "repository (client) ",
-      repository2: "https://github.com/umenorin/matchtrip-api",
-      repository2_description: "repository (api)",
+      primaryRepo: {
+        url: "https://github.com/umenorin/matchtrip-client",
+        description: "repository (client)"
+      },
+      secondaryRepo: {
+        url: "https://github.com/umenorin/matchtrip-api",
+        description: "repository (api)"
+      }
     },
-    see_more: "Ver Mais",
+    seeMoreLink: "Ver Mais"
   },
   en_us: {
     veronese: {
       description: "VERONESE IS WORKING!!",
-      live_demo: "https://www.veronesemaquetes.com.br/",
+      demoUrl: "https://www.veronesemaquetes.com.br/",
     },
     lelibre: {
       description: "LELIBRE IS WORKING!!",
-      repository1: "https://github.com/umenorin/Projeto-Resenha",
-      repository1_description: "repository",
+      primaryRepo: {
+        url: "https://github.com/umenorin/Projeto-Resenha",
+        description: "repository"
+      }
     },
     matchtrip: {
       description: "MATCHTRIP IS WORKING!!",
-      repository1: "https://github.com/umenorin/matchtrip-client",
-      repository1_description: "repository (client) ",
-      repository2: "https://github.com/umenorin/matchtrip-api",
-      repository2_description: "repository (api)",
+      primaryRepo: {
+        url: "https://github.com/umenorin/matchtrip-client",
+        description: "repository (client)"
+      },
+      secondaryRepo: {
+        url: "https://github.com/umenorin/matchtrip-api",
+        description: "repository (api)"
+      }
     },
-
-    see_more: "See More",
-  },
+    seeMoreLink: "See More"
+  }
 };
+
 export default ProjectPageTranslation;
