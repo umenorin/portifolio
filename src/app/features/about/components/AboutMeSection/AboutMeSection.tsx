@@ -1,4 +1,4 @@
-import { useContext, type Component } from "solid-js";
+import { createSignal, onMount, useContext, type Component } from "solid-js";
 
 import "./AboutMeSection.scss";
 import Section from "../../../../core/layout/Section/Section";
@@ -16,6 +16,25 @@ const AboutMeSection: Component = () => {
   const [language, _setLanguage] = useContext(LanguageContext);
 
   const t = () => AboutTranslation[language() as LanguageCode];
+
+  const [age, setAge] = createSignal(0);
+
+  onMount(() => {
+    const birthDate = new Date("2003-05-03"); // Substitua pela sua data de nascimento
+
+    const today = new Date();
+    let calculatedAge = today.getFullYear() - birthDate.getFullYear();
+
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && today.getDate() < birthDate.getDate())
+    ) {
+      calculatedAge--;
+    }
+
+    setAge(calculatedAge);
+  });
 
   return (
     <Section>
@@ -35,11 +54,7 @@ const AboutMeSection: Component = () => {
             <p class="about-section__paragraph">{t().my_description} </p>
 
             <div class="about-section__container-personal">
-              <PersonalStatus
-                icon={AboutMeIcons.cake}
-                text="22 anos"
-                status=""
-              />
+              <PersonalStatus icon={AboutMeIcons.cake} text={`${age()} anos`} status="" />
 
               <PersonalStatus
                 icon={AboutMeIcons.location}
