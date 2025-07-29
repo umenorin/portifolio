@@ -1,4 +1,4 @@
-import { For, useContext, type Component } from "solid-js";
+import { createMemo, For, useContext, type Component } from "solid-js";
 
 import "./SingleProject.scss";
 import veronese from "../../../../../assets/images/project_section/veronese.webp";
@@ -10,7 +10,6 @@ import BoxLayout from "../../../../core/shared/BoxLayout/BoxLayout";
 import {
   LanguageCode,
   LanguageContext,
-  SubRouteCode,
 } from "../../../../core/context/LanguageContext";
 import ProjectPageTranslation, {
   IProjectDetails,
@@ -24,31 +23,40 @@ const SingleProject: Component = () => {
   const matchtripURI = "matchtrip";
   const leLibreURI = "lelibre";
   let myImg;
-  const t = getProjectDetails();
 
-  function getProjectDetails(): IProjectDetails {
-    if (actualLocation.pathname.includes(veroneseURI)) {
-      myImg = veronese;
-      return ProjectPageTranslation[language() as LanguageCode].veronese;
-    }
-
-    if (actualLocation.pathname.includes(matchtripURI)) {
-      myImg = matchtrip;
-      return ProjectPageTranslation[language() as LanguageCode].matchtrip;
-    }
-
-    if (actualLocation.pathname.includes(leLibreURI)) {
-      myImg = lelibre;
-      return ProjectPageTranslation[language() as LanguageCode].lelibre;
-    }
-
+const t = createMemo(() => {
+  if (actualLocation.pathname.includes(veroneseURI)) {
     return {
+      details: ProjectPageTranslation[language() as LanguageCode].veronese,
+      img: veronese,
+    };
+  }
+
+  if (actualLocation.pathname.includes(matchtripURI)) {
+    return {
+      details: ProjectPageTranslation[language() as LanguageCode].matchtrip,
+      img: matchtrip,
+    };
+  }
+
+  if (actualLocation.pathname.includes(leLibreURI)) {
+    return {
+      details: ProjectPageTranslation[language() as LanguageCode].lelibre,
+      img: lelibre,
+    };
+  }
+
+  return {
+    details: {
       description: "Project not found",
       demoUrl: undefined,
       primaryRepo: undefined,
       secondaryRepo: undefined,
-    };
-  }
+    },
+    img: "",
+  };
+});
+
 
   return (
     <Section>
@@ -56,17 +64,17 @@ const SingleProject: Component = () => {
         <div class="single-project__card">
           <BoxLayout title="Veronese Maquetes">
             <div class="single-project__image-container">
-              <img src={myImg} class="single-project__image" />
+              <img src={t().img} class="single-project__image" />
             </div>
-            <p class="single-project__paragraph">{t.description}</p>
+            <p class="single-project__paragraph">{t().details.description}</p>
             <div class="single-project__urls">
               <For
                 each={[
-                  { url: t.demoUrl, text: "Live Demo" },
-                  { url: t.primaryRepo?.url, text: t.primaryRepo?.description },
+                  { url: t().details.demoUrl, text: "Live Demo" },
+                  { url: t().details.primaryRepo?.url, text: t().details.primaryRepo?.description },
                   {
-                    url: t.secondaryRepo?.url,
-                    text: t.secondaryRepo?.description,
+                    url: t().details.secondaryRepo?.url,
+                    text: t().details.secondaryRepo?.description,
                   },
                 ].filter((link) => link.url)}
               >
