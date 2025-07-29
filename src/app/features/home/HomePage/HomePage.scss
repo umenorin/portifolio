@@ -1,7 +1,9 @@
+@use "../../../../styles/variables" as *;
+
 .home {
   &__line {
     width: 85vw;
     margin: auto;
-    color: #1E294080;
+    color: $color-border-gray;
   }
 }

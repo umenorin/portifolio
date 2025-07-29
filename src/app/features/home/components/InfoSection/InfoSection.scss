@@ -1,11 +1,17 @@
+@use "../../../../../styles/variables" as *;
+
+:host {
+  --spacing-local-big: 5rem;
+}
+
 .info-section {
   &__container {
     display: flex;
-    gap: 5rem;
+    gap: var(--spacing-local-big);
 
     @media only screen and (max-width: 1180px) {
       flex-direction: column;
-      gap: 5rem;
+      gap: var(--spacing-local-big);
       width: 70vw;
       margin: auto;
     }
@@ -14,14 +20,14 @@
   &__text {
     font-size: 2.5rem;
     list-style-position: inside;
-    color: #737373;
+    color: $font-color-gray;
 
     @media only screen and (min-width: 860px) and (max-width: 933px) {
-      font-size: 2rem;
+      font-size: $font-size-default;
     }
 
     @media only screen and (max-width: 430px) {
-      font-size: 1.7rem;
+      font-size: $font-size-small;
     }
 
     &--link {

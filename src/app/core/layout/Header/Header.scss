@@ -1,23 +1,20 @@
-:root {
-  --size-medium: 2rem;
-  --light-color-text: #fff;
-}
+@use "../../../../styles/variables" as *;
 
 .header {
   &__container {
     display: flex;
     justify-content: space-between;
 
-    background-color: #355C7D;
-    margin: 2rem auto;
+    background-color: $color-primary;
+    margin: $spacing-medium auto;
     width: 85vw;
-    padding: 2rem;
-    border-radius: 1rem;
+    padding: $spacing-medium;
+    border-radius: $spacing-small;
   }
 
   &__routers {
     display: flex;
-    gap: var(--size-medium);
+    gap: $spacing-medium;
 
     @media only screen and (max-width: 700px) {
       display: none;
@@ -29,9 +26,9 @@
 
     &:link,
     &:visited {
-      font-size: var(--size-medium);
-      color: var(--light-color-text);
-      font-weight: 700;
+      font-size: $font-size-default;
+      color: $font-default-color-white;
+      font-weight: $font-weight-bold;
       text-decoration: transparent;
     }
 

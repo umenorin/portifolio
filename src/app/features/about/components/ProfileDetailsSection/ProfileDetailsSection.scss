@@ -1,3 +1,5 @@
+@use "../../../../../styles/variables" as *;
+
 .profile-details-section {
   max-width: 88rem;
 
@@ -16,8 +18,8 @@
   &__item {
     list-style: none;
     position: relative;
-    margin-bottom: 1rem;
-    padding-left: 2rem; // espaço para a bolinha
+    margin-bottom: $spacing-small;
+    padding-left: $spacing-medium;
 
     &::before {
       content: "•";
@@ -25,8 +27,8 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      color: #737373;
-      font-size: 2rem;
+      color: $font-color-gray;
+      font-size: $font-size-default;
       line-height: 1;
     }
   }
@@ -34,7 +36,7 @@
   &__content-item {
     display: inline-flex;
     align-items: center;
-    gap: 1rem;
+    gap: $spacing-small;
   }
 
   &__image {
@@ -47,16 +49,16 @@
   }
 
   &__text {
-    font-size: 2rem;
+    font-size: $font-size-default;
     list-style-position: inside;
-    color: #737373;
+    color: $font-color-gray;
 
     @media only screen and (min-width: 860px) and (max-width: 933px) {
-      font-size: 2rem;
+      font-size: $font-size-default;
     }
 
     @media only screen and (max-width: 430px) {
-      font-size: 1.7rem;
+      font-size: $font-size-small;
     }
 
     &--link {
@@ -67,12 +69,4 @@
       }
     }
   }
-
-  &__slider {
-    @media only screen and (max-width: 1000px) {
-      width: 70vw;
-      margin: auto;
-    }
-  }
 }
- 

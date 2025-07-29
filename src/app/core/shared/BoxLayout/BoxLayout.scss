@@ -1,27 +1,30 @@
+@use "../../../../styles/variables" as *;
+
 .box-layout {
   &__container {
-    border: 1px solid #1e294080;
-    padding: 2rem 4rem 4rem;
-    border-radius: 2rem;
+    border: 1px solid $color-border-gray;
+    padding: $spacing-medium $spacing-xbig $spacing-xbig;
+    border-radius: $spacing-medium;
   }
 
   &__title {
-    font-size: 4rem;
+    font-size: $font-title-default;
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin-bottom: $spacing-medium;
+    
 
-    color: #0d0d0d;
+    color: $font-default-color-dark;
 
     @media only screen and (min-width: 860px) and (max-width: 933px) {
-      font-size: 3.5rem;
+      font-size: $font-title-small;
     }
 
     @media only screen and (max-width: 633px) {
-      font-size: 3.5rem;
+      font-size: $font-title-small;
     }
 
     @media only screen and (max-width: 430px) {
-      font-size: 3rem;
+      font-size: $font-title-xsmall;
     }
   }
 

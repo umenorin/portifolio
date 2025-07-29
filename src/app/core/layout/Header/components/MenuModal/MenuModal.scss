@@ -1,3 +1,5 @@
+@use "../../../../../../styles/variables" as *;
+
 .menu-modal {
   position: fixed;
 
@@ -21,8 +23,8 @@
     position: fixed;
     right: -5rem;
     top: 0;
-    background-color: #355c7d;
-    padding: 2rem;
+    background-color: $color-primary;
+    padding: $spacing-medium;
     display: flex;
     flex-direction: column;
 
@@ -46,19 +48,19 @@
   }
 
   &__paragraph {
-    color: var(--light-color-text);
-    font-size: var(--size-medium);
-    margin-bottom: 1rem;
+    color: $font-default-color-white;
+    font-size: $font-size-default;
+    margin-bottom: $spacing-small;
   }
 
   &__routers {
     display: flex;
     flex-direction: column;
 
-    gap: var(--size-medium);
-    font-weight: 600;
+    gap: $font-size-default;
+    font-weight: $font-weight-semi-bold;
 
-    margin-bottom: 3rem;
+    margin-bottom: $spacing-big;
   }
 
   &__router-link {
@@ -67,14 +69,14 @@
     &:link,
     &:visited {
       font-size: 2.5rem;
-      color: var(--light-color-text);
-      font-weight: 700;
+      color: $font-default-color-white;
+      font-weight: $font-weight-bold;
       text-decoration: transparent;
     }
 
     &:hover {
       text-decoration: underline;
-      border-radius: 5px;
+      border-radius: $border-radius-default;
     }
 
     &.active {
@@ -97,7 +99,7 @@
   }
 
   &__line {
-    color: white;
+    color: $font-default-color-white;
   }
 }
 

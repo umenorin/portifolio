@@ -1,7 +1,9 @@
+@use "../../../../../styles/variables" as *;
+
 .about-section {
   &__container {
     display: flex;
-    gap: 3rem;
+    gap: $spacing-big;
 
     &-info {
       max-width: 70rem;
@@ -14,17 +16,17 @@
 
     &-personal {
       display: flex;
-      gap: 4rem;
+      gap: $spacing-xbig;
 
       @media only screen and (max-width: 1020px) {
-        gap: 2rem;
+        gap: $spacing-medium;
       }
     }
   }
 
   &__image {
-    border-radius: 4rem;
-    border: 2px solid black;
+    border-radius: $border-radius-big;
+    border: 2px solid $color-background-dark;
     overflow: hidden;
     max-width: 36rem;
     min-width: 35rem;
@@ -39,7 +41,7 @@
       @media only screen and (max-width: 1020px) {
         max-width: 80rem;
         display: block;
-        margin-bottom: 2rem;
+        margin-bottom: $spacing-medium;
 
         min-width: 0;
       }
@@ -55,39 +57,39 @@
     @media only screen and (max-width: 1020px) {
       display: flex;
       flex-direction: column-reverse;
-      gap: 3rem;
+      gap: $spacing-big;
     }
   }
 
   &__title {
-    font-size: 5rem;
-    margin-bottom: 3rem;
-    color: #0d0d0d;
+    font-size: $font-title-default;
+    margin-bottom: $spacing-big;
+    color: $font-default-color-dark;
 
     @media only screen and (min-width: 860px) and (max-width: 933px) {
-      font-size: 3.5rem;
+      font-size: $font-title-small;
     }
 
     @media only screen and (max-width: 633px) {
-      font-size: 3.5rem;
+      font-size: $font-title-small;
     }
 
     @media only screen and (max-width: 430px) {
-      font-size: 3rem;
+      font-size: $font-title-xsmall;
     }
   }
 
   &__paragraph {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #737373;
+    font-size: $font-size-default;
+    margin-bottom: $spacing-small;
+    color: $font-color-gray;
 
     @media only screen and (min-width: 860px) and (max-width: 933px) {
-      font-size: 1.7rem;
+      font-size: $font-size-small;
     }
 
     @media only screen and (max-width: 430px) {
-      font-size: 1.5rem;
+      font-size: $font-size-xsmall;
     }
   }
 }

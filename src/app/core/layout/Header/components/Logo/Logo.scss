@@ -1,10 +1,14 @@
+@use "../../../../../../styles/variables" as *;
+
+
+
 .logo-link {
   &:link,
   &:visited,
   &:active {
-    font-size: var(--size-medium);
-    color: var(--light-color-text);
-    font-weight: 700;
+    font-size: $font-size-default;
+    color: $font-default-color-light;
+    font-weight: $font-weight-bold;
     text-decoration: none;
   }
 }

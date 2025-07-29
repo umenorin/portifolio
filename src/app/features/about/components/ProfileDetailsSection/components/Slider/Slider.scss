@@ -1,14 +1,16 @@
+@use "../../../../../../../styles/variables" as *;
+
 .profile-slider {
   overflow: hidden;
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: $spacing-big;
 
   @media only screen and (max-width: 1000px) {
     width: 70vw;
   }
 
   &__text {
-    margin-bottom: 2rem;
+    margin-bottom: $spacing-medium;
     text-align: center;
   }
 
@@ -32,7 +34,7 @@
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: $spacing-small;
   }
 
   &__dot {
@@ -42,7 +44,7 @@
     border-radius: 50%;
 
     &.active {
-      background: #333;
+      background: $font-color-gray;
     }
   }
 
@@ -55,10 +57,10 @@
 
   &__button {
     background: rgba(0, 0, 0, 0.18);
-    color: white;
+    color: $font-default-color-white;
     border: none;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
+    font-size: $font-size-default;
+    padding: 0.5rem $spacing-small;
     cursor: pointer;
     transition: background 0.3s;
     border-radius: 0.5rem;

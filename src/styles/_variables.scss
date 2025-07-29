@@ -1,21 +1,24 @@
 $font-title-default: 4rem;
 $font-title-small: 3.5rem;
+$font-title-xsmall: 3rem;
 
-$font-size-xsmall: 1.4rem;
+$font-size-xsmall: 1.5rem;
 $font-size-small: 1.8rem;
 $font-size-default: 2rem;
 $font-size-big: 3rem;
 $font-size-xbig: 4rem;
 
 $font-weight-normal: 400;
-$font-weight-bold: 600;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
 
 $font-family-default: "Inter", sans-serif;
-$font-family-title: "Italiana", sans-serif;
 
-$font-default-color-dark: #141513;
+$font-default-color-dark: #0d0d0d;
 $font-default-color-light: #ececec;
-$font-color-gray: gray;
+$font-default-color-white: #fff;
+
+$font-color-gray: #808080;
 
 $spacing-xsmall: 0.5rem;
 $spacing-small: 1rem;
@@ -24,7 +27,10 @@ $spacing-big: 3rem;
 $spacing-xbig: 4rem;
 
 $border-radius-default: 5px;
+$border-radius-big: 4rem;
 
-$color-primary-green: #3a4538;
-$color-background-dark: #141513;
+$color-primary: #355c7d;
+$color-background-dark: #0d0d0d;
 $color-background-light: #fff;
+$color-border-gray: #1e294080;
+$color-green: #38c70e;

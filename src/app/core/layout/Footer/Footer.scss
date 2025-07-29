@@ -1,11 +1,13 @@
+@use "../../../../styles/variables" as *;
+
 .footer {
   &__text {
-    font-size: 2rem;
-    color: #808080;
+    font-size: $font-size-default;
+    color: $font-color-gray;
     text-align: center;
 
     @media only screen and (max-width: 400px) {
-      font-size: 1.5rem;
+      font-size: $font-size-xsmall;
     }
   }
 }
