@@ -1,3 +1,5 @@
+@use "../../../../../styles/variables" as *;
+
 .intro-section {
   &__container {
     display: flex;
@@ -25,34 +27,34 @@
   }
 
   &__title {
-    font-size: 5rem;
+    font-size: $font-title-default;
     margin-bottom: 5rem;
-    color: #0d0d0d;
+    color: $font-default-color-dark;
 
     @media only screen and (min-width: 860px) and (max-width: 933px) {
-      font-size: 3.5rem;
+      font-size: $font-title-small;
     }
 
     @media only screen and (max-width: 633px) {
-      font-size: 3.5rem;
+      font-size: $font-title-small;
     }
 
     @media only screen and (max-width: 430px) {
-      font-size: 3rem;
+      font-size: $font-title-xsmall;
     }
   }
 
   &__paragraph {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #737373;
+    font-size: $font-size-default;
+    margin-bottom: $spacing-small;
+    color: $font-color-gray;
 
     @media only screen and (min-width: 860px) and (max-width: 933px) {
-      font-size: 1.7rem;
+      font-size: $font-size-small;
     }
 
     @media only screen and (max-width: 430px) {
-      font-size: 1.5rem;
+      font-size: $font-size-xsmall;
     }
   }
 

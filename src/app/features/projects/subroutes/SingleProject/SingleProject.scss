@@ -1,3 +1,6 @@
+@use "../../../../../styles/variables" as *;
+
+
 .single-project {
   &__image {
     width: 100%;
@@ -14,16 +17,16 @@
   }
 
   &__paragraph {
-    font-size: 2rem;
+    font-size: $font-size-default;
     max-width: 60rem;
 
-    margin-bottom: 3rem;
+    margin-bottom: $spacing-big;
 
-    color: #737373;
+    color: $font-color-gray;
 
 
     @media only screen and (min-width: 860px) and (max-width: 933px) {
-      font-size: 1.7rem;
+      font-size: $font-size-small;
     }
 
 
@@ -38,12 +41,12 @@
   }
 
   &__link {
-    font-size: 1.8rem;
+    font-size: $font-size-small;
 
-    color: #355c7d;
+    color: $color-primary;
 
     &:hover {
-      color: #6190b1;
+      color: $color-primary-dark;
       text-decoration: underline;
     }
   }

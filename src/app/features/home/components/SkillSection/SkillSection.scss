@@ -1,28 +1,30 @@
+@use "../../../../../styles/variables" as *;
+
 .skill-section {
   &__container {
     max-width: 94.6rem;
   }
 
   &__title {
-    font-size: 4rem;
-    font-weight: 600;
+    font-size: $font-title-default;
+    font-weight: $font-weight-semi-bold;
     width: 60vw;
-    margin: 0 auto 4rem;
+    margin: 0 auto $spacing-xbig;
 
     @media only screen and (max-width: 1180px) {
-      margin: 0 0 4rem 0;
+      margin: 0 0 $spacing-xbig 0;
     }
 
     @media only screen and (max-width: 1000px) {
-      font-size: 3.5rem;
+      font-size: $font-title-small;
       width: 60vw;
-      margin: 0 auto 4rem ;
+      margin: 0 auto $spacing-xbig;
     }
   }
 
   &__carousel {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: $spacing-medium;
   }
 }

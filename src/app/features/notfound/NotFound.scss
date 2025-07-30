@@ -1,3 +1,5 @@
+@use "../../../styles/variables" as *;
+
 .not-found {
   width: 80%;
 
@@ -6,11 +8,11 @@
   }
 
   &__subtitle {
-    font-size: 4rem;
-    margin-bottom: 4rem;
+    font-size: $font-size-xbig;
+    margin-bottom: $spacing-xbig;
   }
 
   &__paragraph {
-    font-size: 2rem;
+    font-size: $font-size-default;
   }
 }
