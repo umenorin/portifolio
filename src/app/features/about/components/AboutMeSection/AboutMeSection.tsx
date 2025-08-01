@@ -1,4 +1,4 @@
-import { createSignal, onMount, useContext, type Component } from "solid-js";
+import { createMemo, createSignal, onMount, useContext, type Component } from "solid-js";
 
 import "./AboutMeSection.scss";
 import Section from "../../../../core/layout/Section/Section";
@@ -11,11 +11,18 @@ import {
   LanguageContext,
 } from "../../../../core/context/LanguageContext";
 import AboutTranslation from "../../AboutTraslation";
+import DownloadButton from "./components/DownloadButton/DownloadButton";
+
+import cvPT from "../../../../../assets/downloads/curriculo.pdf";
+import cvEN from "../../../../../assets/downloads/curriculo_en.pdf";
 
 const AboutMeSection: Component = () => {
   const [language, _setLanguage] = useContext(LanguageContext);
 
   const t = () => AboutTranslation[language() as LanguageCode];
+
+  const url = createMemo(() => (language() == "pt_br" ? cvPT : cvEN));
+  console.log(url())
 
   const [age, setAge] = createSignal(0);
 
@@ -54,7 +61,11 @@ const AboutMeSection: Component = () => {
             <p class="about-section__paragraph">{t().my_description} </p>
 
             <div class="about-section__container-personal">
-              <PersonalStatus icon={AboutMeIcons.cake} text={`${age()} anos`} status="" />
+              <PersonalStatus
+                icon={AboutMeIcons.cake}
+                text={`${age()} anos`}
+                status=""
+              />
 
               <PersonalStatus
                 icon={AboutMeIcons.location}
@@ -68,6 +79,7 @@ const AboutMeSection: Component = () => {
                 status="active"
               />
             </div>
+            <DownloadButton text={t().download} url={url()} />
           </div>
         </div>
       </div>

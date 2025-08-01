@@ -1,5 +1,6 @@
 const AboutTranslation = {
   pt_br: {
+    download: "Meu currículo",
     title: "Sobre mim",
     my_description:
       "Desenvolvedor full-stack com foco em criar soluções digitais completas, eficientes e com propósito. Minha trajetória é voltada à construção de produtos que aliam design funcional, performance e uma experiência de uso inteligente. Atuo em todas as etapas do desenvolvimento, desde a interface até a lógica de negócio, sempre buscando escalabilidade, organização e boas práticas. Atualmente, curso Sistemas de Informação na UVV, onde aprofundo meus conhecimentos em desenvolvimento de software, arquitetura de sistemas e tecnologias modernas aplicadas ao dia a dia da programação.",
@@ -17,6 +18,7 @@ const AboutTranslation = {
   },
 
   en_us: {
+    download: "My CV",
     title: "About me",
     my_description:
       "Full-stack developer , focused on creating complete, efficient, and purposeful digital solutions. My journey is dedicated to building products that combine functional design, performance, and an intelligent user experience. I work across all stages of development, from interface to business logic, always striving for scalability, organization, and best practices. Currently, I am pursuing a degree in Information Systems at UVV, where I deepen my knowledge in software development, system architecture, and modern technologies applied to everyday programming.",

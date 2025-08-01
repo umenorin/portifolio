@@ -1,0 +1,30 @@
+@use "../../../../../../../styles/variables" as *;
+
+.personal-status {
+  &__container {
+    display: flex;
+    align-items: center;
+    background-color: $color-primary;
+    width: fit-content;
+    padding: 7px;
+    border-radius: 1rem;
+  }
+
+  &__paragraph {
+    font-size: 1.5rem;
+    color: $font-default-color-light;
+    font-weight: $font-weight-semi-bold;
+
+    @media only screen and (max-width: 450px) {
+      font-size: 1rem;
+    }
+
+    &--active {
+      color: $color-green;
+    }
+  }
+
+  &__image {
+    margin-right: 5px;
+  }
+}
