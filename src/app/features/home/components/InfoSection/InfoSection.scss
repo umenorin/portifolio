@@ -1,13 +1,9 @@
 @use "../../../../../styles/variables" as *;
 
-:host {
-  --spacing-local-big: 5rem;
-}
-
 .info-section {
   &__container {
     display: flex;
-    gap: var(--spacing-local-big);
+    gap: 5rem;
 
     @media only screen and (max-width: 1180px) {
       flex-direction: column;
