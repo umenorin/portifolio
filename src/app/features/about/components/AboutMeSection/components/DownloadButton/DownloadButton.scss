@@ -1,6 +1,6 @@
 @use "../../../../../../../styles/variables" as *;
 
-.personal-status {
+.download-button {
   &__container {
     display: flex;
     align-items: center;
@@ -8,6 +8,8 @@
     width: fit-content;
     padding: 7px;
     border-radius: 1rem;
+
+    text-decoration: none;
   }
 
   &__paragraph {
@@ -24,7 +26,4 @@
     }
   }
 
-  &__image {
-    margin-right: 5px;
-  }
-}
+} 
