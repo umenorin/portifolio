@@ -11,10 +11,9 @@ import {
   LanguageCode,
   LanguageContext,
 } from "../../../../core/context/LanguageContext";
-import ProjectPageTranslation, {
-  IProjectDetails,
-} from "../../ProjectPageTranslation";
+import ProjectPageTranslation, { IProjectDetails } from "../../ProjectPageTranslation";
 import { useLocation } from "@solidjs/router";
+import { Title } from "@solidjs/meta";
 
 const SingleProject: Component = () => {
   const actualLocation = useLocation();
@@ -22,47 +21,48 @@ const SingleProject: Component = () => {
   const veroneseURI = "veronese-maquetes";
   const matchtripURI = "matchtrip";
   const leLibreURI = "lelibre";
-  let myImg;
 
-const t = createMemo(() => {
-  if (actualLocation.pathname.includes(veroneseURI)) {
+  const t = createMemo(() => {
+    if (actualLocation.pathname.includes(veroneseURI)) {
+      return {
+        details: ProjectPageTranslation[language() as LanguageCode].veronese,
+        img: veronese,
+      };
+    }
+
+    if (actualLocation.pathname.includes(matchtripURI)) {
+      return {
+        details: ProjectPageTranslation[language() as LanguageCode].matchtrip,
+        img: matchtrip,
+      };
+    }
+
+    if (actualLocation.pathname.includes(leLibreURI)) {
+      return {
+        details: ProjectPageTranslation[language() as LanguageCode].lelibre,
+        img: lelibre,
+      };
+    }
+
     return {
-      details: ProjectPageTranslation[language() as LanguageCode].veronese,
-      img: veronese,
+      details: {
+        description: "Project not found",
+        demoUrl: undefined,
+        primaryRepo: undefined,
+        secondaryRepo: undefined,
+      },
+      img: "",
     };
-  }
-
-  if (actualLocation.pathname.includes(matchtripURI)) {
-    return {
-      details: ProjectPageTranslation[language() as LanguageCode].matchtrip,
-      img: matchtrip,
-    };
-  }
-
-  if (actualLocation.pathname.includes(leLibreURI)) {
-    return {
-      details: ProjectPageTranslation[language() as LanguageCode].lelibre,
-      img: lelibre,
-    };
-  }
-
-  return {
-    details: {
-      description: "Project not found",
-      demoUrl: undefined,
-      primaryRepo: undefined,
-      secondaryRepo: undefined,
-    },
-    img: "",
-  };
-});
-
+  });
 
   return (
     <Section>
+      <Title>
+        {language() == "pt_br" ? "Projetos" : "Projects"} - {(t().details as IProjectDetails).projectName}
+      </Title>
       <div class="single-project__container">
         <div class="single-project__card">
-          <BoxLayout title="Veronese Maquetes">
+          <BoxLayout title={(t().details as IProjectDetails).projectName}>
             <div class="single-project__image-container">
               <img src={t().img} class="single-project__image" />
             </div>
@@ -71,7 +71,10 @@ const t = createMemo(() => {
               <For
                 each={[
                   { url: t().details.demoUrl, text: "Live Demo" },
-                  { url: t().details.primaryRepo?.url, text: t().details.primaryRepo?.description },
+                  {
+                    url: t().details.primaryRepo?.url,
+                    text: t().details.primaryRepo?.description,
+                  },
                   {
                     url: t().details.secondaryRepo?.url,
                     text: t().details.secondaryRepo?.description,

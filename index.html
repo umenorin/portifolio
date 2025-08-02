@@ -1,12 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br" data-alternate-langs="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.ico" />
     <link rel="stylesheet" href="style.scss" />
-    <title>Meu Portifolio</title>
 
     <!-- My custom Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,11 +14,48 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Canonical-->
+    <link rel="canonical" href="https://seusite.com" />
+
+    <!--Description-->
+    <meta
+      name="description"
+      content="Desenvolvedor full-stack com foco em front-end, back-end, componentização e criação de landing pages. Estudante de Sistemas de Informação na UVV, com domínio de frameworks modernos."
+    />
+
+    <!--Keyords-->
+    <meta
+      name="keywords"
+      content="desenvolvedor, portfolio, full stack, programador, GO, c#, java, angular, solidjs"
+    />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
     <script src="/src/app/App.tsx" type="module"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ruan Costa Oliveira",
+        "jobTitle": "Full-Stack Developer",
+        "email": "ruan_costa_oliveira@outlook.com",
+        "telephone": "+55 27 99667-2444",
+        "url": "https://seusite.com",
+        "knowsAbout": [
+          "Web Development",
+          "Front-End",
+          "Back-End",
+          "Componentização",
+          "Landing Pages"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "UVV"
+        }
+      }
+    </script>
   </body>
 </html>
