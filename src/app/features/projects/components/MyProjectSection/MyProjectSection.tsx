@@ -2,7 +2,6 @@ import { useContext, type Component } from "solid-js";
 
 import "./MyProjectSection.scss";
 import Section from "../../../../core/layout/Section/Section";
-import BoxLayout from "../../../../core/shared/BoxLayout/BoxLayout";
 import veronese from "../../../../../assets/images/project_section/veronese.webp";
 import lelibre from "../../../../../assets/images/project_section/lelibre.webp";
 import matchtrip from "../../../../../assets/images/project_section/matchtrip.webp";
@@ -11,6 +10,7 @@ import {
   LanguageCode,
   LanguageContext,
 } from "../../../../core/context/LanguageContext";
+import ProjectBox from "./components/ProjectBox/ProjectBox";
 
 const MyProjectSection: Component = () => {
   const [language, _setLanguage] = useContext(LanguageContext);
@@ -18,49 +18,30 @@ const MyProjectSection: Component = () => {
 
   return (
     <Section>
-      <div class="project-section__container">
-        <div class="project-section__card">
-          <BoxLayout title="Veronese Maquetes">
-            <div class="project-section__image-container">
-              <img src={veronese} class="project-section__image" />
-              <a
-                class="project-section__image-link"
-                href="/projects/veronese-maquetes"
-              >
-                {t().seeMoreLink}
-              </a>
-            </div>
+      <div>
+        <h1 class="project-section__title">Meu Projetos</h1>
 
-            <p class="project-section__paragraph">{t().veronese.description}</p>
-          </BoxLayout>
-        </div>
+        <div class="project-section__container">
+          <ProjectBox
+            title="Veronese Maquetes"
+            img={veronese}
+            linkURI="/projects/veronese-maquetes"
+            paragraph={t().veronese.description}
+          />
 
-        <div class="project-section__card">
-          <BoxLayout title="Le Libre">
-            <div class="project-section__image-container">
-              <img src={lelibre} class="project-section__image" />
-              <a class="project-section__image-link" href="/projects/lelibre">
-                {t().seeMoreLink}
-              </a>
-            </div>
+          <ProjectBox
+            title="Le Libre"
+            img={lelibre}
+            linkURI="/projects/lelibre"
+            paragraph={t().lelibre.description}
+          />
 
-            <p class="project-section__paragraph">{t().lelibre.description}</p>
-          </BoxLayout>
-        </div>
-
-        <div class="project-section__card">
-          <BoxLayout title="MatchTrip">
-            <div class="project-section__image-container">
-              <img src={matchtrip} class="project-section__image" />
-              <a class="project-section__image-link" href="/projects/matchtrip">
-                {t().seeMoreLink}
-              </a>
-            </div>
-
-            <p class="project-section__paragraph">
-              {t().matchtrip.description}
-            </p>
-          </BoxLayout>
+          <ProjectBox
+            title="MatchTrip"
+            img={matchtrip}
+            linkURI="/projects/matchtrip"
+            paragraph={t().matchtrip.description}
+          />
         </div>
       </div>
     </Section>
